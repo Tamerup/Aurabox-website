@@ -25,7 +25,7 @@ export function Hero() {
           AURABOX
         </span>
 
-        <h1 className="animate-fade-up mt-8 font-serif text-[13vw] font-light leading-[0.95] text-ivory opacity-0 [animation-delay:0.15s] sm:text-[9vw] md:text-[6.5vw] lg:text-[88px]">
+        <h1 className="animate-fade-up mt-8 font-serif text-[13vw] font-light leading-[0.95] text-gold opacity-0 [animation-delay:0.15s] sm:text-[9vw] md:text-[6.5vw] lg:text-[88px]">
           Feel The Luxury.
         </h1>
 
