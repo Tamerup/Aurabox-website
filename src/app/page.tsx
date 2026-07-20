@@ -4,7 +4,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Manifesto } from "@/components/sections/Manifesto";
 import { Experience } from "@/components/sections/Experience";
-import { Machine } from "@/components/sections/Machine";
 import { Fragrances } from "@/components/sections/Fragrances";
 import { Partners } from "@/components/sections/Partners";
 import { Instagram } from "@/components/sections/Instagram";
@@ -39,7 +38,6 @@ export default function Home() {
         <Hero />
         <Manifesto />
         <Experience />
-        <Machine />
         <Fragrances />
         <Locations />
         <Partners />
