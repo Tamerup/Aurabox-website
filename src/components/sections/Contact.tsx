@@ -23,7 +23,7 @@ export function Contact() {
           href="mailto:auraboxoy@gmail.com"
           className="mt-10 font-serif text-2xl italic text-gold transition-colors duration-300 hover:text-ivory"
         >
-          hello@aurabox.fi
+          auraboxoy@gmail.com
         </a>
 
         <p className="font-label mt-8 text-[11px] uppercase tracking-[0.4em] text-mist">
