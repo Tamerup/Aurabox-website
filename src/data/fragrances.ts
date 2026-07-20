@@ -9,72 +9,60 @@ export type Fragrance = {
     base: string;
   };
 };
-
 export const FRAGRANCES: Fragrance[] = [
   {
-    id: "aurum",
-    name: "Aurum",
+    id: "creed-aventus",
+    name: "Creed Aventus",
     mood: "Command",
-    line: "The scent of certainty.",
+    line: "Born to celebrate success.",
     notes: {
-      top: "Bergamot, Black Pepper",
-      heart: "Cedar, Amber",
-      base: "Vetiver, Musk",
+      top: "Bergamot, Blackcurrant, Apple",
+      heart: "Birch, Patchouli, Rose",
+      base: "Musk, Oakmoss, Vanilla",
     },
   },
   {
-    id: "nocturne",
-    name: "Nocturne",
+    id: "tobacco-vanille",
+    name: "Tom Ford Tobacco Vanille",
+    mood: "Premium",
+    line: "Warm, rich and unforgettable.",
+    notes: {
+      top: "Tobacco, Spices",
+      heart: "Tobacco Blossom, Jasmine",
+      base: "Vanilla, Cacao, Sandalwood",
+    },
+  },
+  {
+    id: "black-opium",
+    name: "YSL Black Opium",
     mood: "After Dark",
-    line: "For nights that don't end early.",
+    line: "Addictive and modern.",
     notes: {
-      top: "Blackcurrant, Pink Pepper",
-      heart: "Leather, Iris",
-      base: "Oud, Tonka Bean",
+      top: "Pink Pepper, Orange Blossom",
+      heart: "Coffee, Jasmine",
+      base: "Vanilla, Patchouli, Cedarwood",
     },
   },
   {
-    id: "velvet-hour",
-    name: "Velvet Hour",
+    id: "lost-cherry",
+    name: "Tom Ford Lost Cherry",
     mood: "Undeniable",
-    line: "Warmth, before you say a word.",
+    line: "Delicate yet intense.",
     notes: {
-      top: "Bergamot, Saffron",
-      heart: "Rose, Suede",
-      base: "Sandalwood, Vanilla",
+      top: "Cherry, Plum",
+      heart: "Almond, Turkish Rose",
+      base: "Tonka Bean, Sandalwood, Vanilla",
     },
   },
   {
-    id: "first-light",
-    name: "First Light",
-    mood: "Departure",
-    line: "Clean confidence, at altitude.",
+    id: "baccarat-rouge",
+    name: "Baccarat Rouge 540",
+    mood: "Iconic",
+    line: "Electric. Unique. Obsession.",
     notes: {
-      top: "Yuzu, Sea Salt",
-      heart: "White Tea, Neroli",
-      base: "Ambergris, Musk",
-    },
-  },
-  {
-    id: "silk-route",
-    name: "Silk Route",
-    mood: "Timeless",
-    line: "A memory, worn.",
-    notes: {
-      top: "Cardamom, Bergamot",
-      heart: "Fig, Jasmine",
-      base: "Sandalwood, Amber",
-    },
-  },
-  {
-    id: "midnight-bloom",
-    name: "Midnight Bloom",
-    mood: "Unspoken",
-    line: "Quiet magnetism.",
-    notes: {
-      top: "Blackberry, Bergamot",
-      heart: "Tuberose, Violet",
-      base: "Patchouli, Musk",
+      top: "Saffron, Jasmine",
+      heart: "Amberwood, Ambergris",
+      base: "Fir Resin, Cedar",
     },
   },
 ];
