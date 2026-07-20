@@ -5,7 +5,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Manifesto } from "@/components/sections/Manifesto";
 import { Experience } from "@/components/sections/Experience";
 import { Fragrances } from "@/components/sections/Fragrances";
-import { Partners } from "@/components/sections/Partners";
 import { Instagram } from "@/components/sections/Instagram";
 import { Contact } from "@/components/sections/Contact";
 
@@ -40,7 +39,6 @@ export default function Home() {
         <Experience />
         <Fragrances />
         <Locations />
-        <Partners />
         <Instagram />
         <Contact />
       </main>
