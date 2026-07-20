@@ -21,11 +21,11 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
-        <span className="animate-fade-in font-serif text-sm tracking-[0.55em] text-mist opacity-0 [animation-delay:0.1s] md:text-base">
-          AURABOX
+        <span className="animate-fade-in font-serif text-sm tracking-[0.55em] text-gold opacity-0 [animation-delay:0.1s] md:text-base">
+        AURABOX
         </span>
 
-        <h1 className="animate-fade-up mt-8 font-serif text-[13vw] font-light leading-[0.95] text-gold opacity-0 [animation-delay:0.15s] sm:text-[9vw] md:text-[6.5vw] lg:text-[88px]">
+        <h1 className="animate-fade-up mt-8 font-serif text-[13vw] font-light leading-[0.95] text-ivory opacity-0 [animation-delay:0.15s] sm:text-[9vw] md:text-[6.5vw] lg:text-[88px]">
           Feel The Luxury.
         </h1>
 
