@@ -15,7 +15,7 @@ export function Fragrances() {
       <div className="mx-auto flex max-w-[1400px] flex-col items-center text-center">
         <Eyebrow>The Fragrances</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-serif text-3xl font-light leading-tight text-ivory md:text-4xl">
-          Six moods. One moment each.
+          Five fragrances. Infinite moments.
         </h2>
       </div>
 
