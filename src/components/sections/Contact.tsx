@@ -20,14 +20,14 @@ export function Contact() {
         </h2>
 
         <a
-          href="mailto:hello@aurabox.fi"
+          href="mailto:auraboxoy@gmail.com"
           className="mt-10 font-serif text-2xl italic text-gold transition-colors duration-300 hover:text-ivory"
         >
           hello@aurabox.fi
         </a>
 
         <p className="font-label mt-8 text-[11px] uppercase tracking-[0.4em] text-mist">
-          Helsinki, Finland
+          Tampere, Finland
         </p>
       </div>
     </section>
