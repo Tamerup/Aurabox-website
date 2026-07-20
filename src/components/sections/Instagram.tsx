@@ -22,9 +22,9 @@ export function Instagram() {
       aria-label="Aurabox on Instagram"
     >
       <div className="mx-auto flex max-w-[1400px] flex-col items-center text-center">
-        <Eyebrow>@aurabox</Eyebrow>
+        <Eyebrow>@aurabox.eu</Eyebrow>
         <h2 className="mt-6 max-w-xl font-serif text-2xl font-light leading-tight text-ivory md:text-3xl">
-          Life, Aura&rsquo;d.
+          Feel The Luxury.
         </h2>
 
         <div
@@ -54,7 +54,7 @@ export function Instagram() {
         </div>
 
         <p className="font-label mt-14 text-[11px] uppercase tracking-[0.4em] text-mist">
-          Follow @aurabox
+          Follow @aurabox.eu
         </p>
       </div>
     </section>
