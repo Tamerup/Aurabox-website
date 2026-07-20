@@ -41,7 +41,7 @@ export function Header() {
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 md:px-12">
         <Link
           href="#top"
-          className="font-serif text-lg tracking-[0.5em] text-ivory"
+          className="font-serif text-lg tracking-[0.5em] text-gold"
           aria-label="Aurabox — home"
         >
           AURABOX
