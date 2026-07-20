@@ -96,8 +96,7 @@ function ExperiencePanel({
   total: number;
   setRef: (el: HTMLDivElement | null) => void;
 }) {
-  const { ref, inView } = useInView<HTMLDivElement>({ amount: 0.5 });
-
+const { ref, inView } = useInView<HTMLDivElement>({ amount: 0.15 });
   return (
     <div
       ref={(el) => {
