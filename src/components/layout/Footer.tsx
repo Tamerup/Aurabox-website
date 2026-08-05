@@ -43,7 +43,7 @@ export function Footer() {
 
         <div className="font-label flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist md:items-end">
           <span>&copy; {year} Aurabox. All rights reserved.</span>
-          <span>Helsinki, Finland</span>
+          <span>Tampere, Finland</span>
         </div>
       </div>
     </footer>
