@@ -7,4 +7,13 @@ export type AuraboxLocation = {
   x: number;
   y: number;
 };
-export const LOCATIONS: AuraboxLocation[] = [];
+export const LOCATIONS: AuraboxLocation[] = [
+  {
+    id: "blockfest-2026",
+    city: "Tampere",
+    venue: "Blockfest 2026 — Fresh Up & Skybox",
+    status: "live",
+    x: 55,
+    y: 42,
+  },
+];
