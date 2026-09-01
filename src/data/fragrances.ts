@@ -139,7 +139,7 @@ export const FRAGRANCES: Fragrance[] = [
   // UNISEX
   {
     id: "baccarat-rouge",
-    name: "MFK - Baccarat Rouge 540",
+    name: "Maison Francis Kurkdjian - Baccarat Rouge 540",
     mood: "Iconic",
     line: "Electric. Unique. Obsession.",
     category: "unisex",
