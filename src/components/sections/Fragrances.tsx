@@ -1,9 +1,20 @@
 "use client";
 
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { FRAGRANCES, type Fragrance } from "@/data/fragrances";
+import {
+  FRAGRANCES_HIM,
+  FRAGRANCES_HER,
+  FRAGRANCES_UNISEX,
+  type Fragrance,
+} from "@/data/fragrances";
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
+
+const CATEGORIES = [
+  { label: "For Him", fragrances: FRAGRANCES_HIM },
+  { label: "For Her", fragrances: FRAGRANCES_HER },
+  { label: "Unisex", fragrances: FRAGRANCES_UNISEX },
+];
 
 export function Fragrances() {
   return (
@@ -15,13 +26,26 @@ export function Fragrances() {
       <div className="mx-auto flex max-w-[1400px] flex-col items-center text-center">
         <Eyebrow>The Fragrances</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-serif text-3xl font-light leading-tight text-ivory md:text-4xl">
-          Five fragrances. Infinite moments.
+          Thirteen fragrances. Infinite moments.
         </h2>
       </div>
 
-      <div className="mx-auto mt-20 grid max-w-[1400px] grid-cols-1 gap-px overflow-hidden bg-hairline sm:grid-cols-2 lg:grid-cols-3">
-        {FRAGRANCES.map((f, i) => (
-          <FragranceCard key={f.id} fragrance={f} delay={(i % 3) * 0.1} />
+      <div className="mx-auto mt-20 max-w-[1400px] space-y-20">
+        {CATEGORIES.map(({ label, fragrances }) => (
+          <div key={label}>
+            <p className="mb-8 font-label text-[11px] uppercase tracking-[0.4em] text-gold">
+              {label}
+            </p>
+            <div className="grid grid-cols-1 gap-px overflow-hidden bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+              {fragrances.map((f, i) => (
+                <FragranceCard
+                  key={f.id}
+                  fragrance={f}
+                  delay={(i % 3) * 0.1}
+                />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>

@@ -15,7 +15,7 @@ export const FRAGRANCES: Fragrance[] = [
   // FOR HIM
   {
     id: "layton-exclusif",
-    name: "Parfums de Marly — Layton Exclusif",
+    name: "Parfums de Marly - Layton Exclusif",
     mood: "Legacy",
     line: "Warm, sweet, old money.",
     category: "him",
@@ -27,7 +27,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "le-male-elixir",
-    name: "Jean Paul Gaultier — Le Male Elixir",
+    name: "Jean Paul Gaultier - Le Male Elixir",
     mood: "Modern",
     line: "Addictive and unapologetically bold.",
     category: "him",
@@ -39,7 +39,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "terre-hermes",
-    name: "Hermès — Terre d'Hermès EDP Intense",
+    name: "Hermès - Terre d'Hermès EDP Intense",
     mood: "Timeless",
     line: "Masculine, earthy, refined.",
     category: "him",
@@ -51,7 +51,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "luna-rossa-ocean",
-    name: "Prada — Luna Rossa Ocean",
+    name: "Prada - Luna Rossa Ocean",
     mood: "Freedom",
     line: "Open sea. Pure confidence.",
     category: "him",
@@ -63,7 +63,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "ysl-myself",
-    name: "YSL — MYSLF",
+    name: "YSL - MYSLF",
     mood: "Power",
     line: "Bold, modern, unapologetic.",
     category: "him",
@@ -77,7 +77,7 @@ export const FRAGRANCES: Fragrance[] = [
   // FOR HER
   {
     id: "barenia-intense",
-    name: "Hermès — Barénia Intense",
+    name: "Hermès - Barénia Intense",
     mood: "Mystique",
     line: "Leather, mystery, strength.",
     category: "her",
@@ -89,7 +89,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "divine-le-parfum",
-    name: "Jean Paul Gaultier — Divine Le Parfum",
+    name: "Jean Paul Gaultier - Divine Le Parfum",
     mood: "Feminine",
     line: "Floral, warm, irresistible.",
     category: "her",
@@ -101,7 +101,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "atomic-rose",
-    name: "Initio — Atomic Rose",
+    name: "Initio - Atomic Rose",
     mood: "Obsession",
     line: "Dark, intense, addictive.",
     category: "her",
@@ -113,7 +113,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "armani-si-intense",
-    name: "Giorgio Armani — Sì Intense",
+    name: "Giorgio Armani - Sì Intense",
     mood: "Power",
     line: "Sensual, timeless, powerful.",
     category: "her",
@@ -125,7 +125,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "prada-paradoxe",
-    name: "Prada — Paradoxe",
+    name: "Prada - Paradoxe",
     mood: "Confidence",
     line: "Elegant, fresh, self-assured.",
     category: "her",
@@ -139,7 +139,7 @@ export const FRAGRANCES: Fragrance[] = [
   // UNISEX
   {
     id: "baccarat-rouge",
-    name: "MFK — Baccarat Rouge 540",
+    name: "MFK - Baccarat Rouge 540",
     mood: "Iconic",
     line: "Electric. Unique. Obsession.",
     category: "unisex",
@@ -151,7 +151,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "sailing-day",
-    name: "Maison Margiela Replica — Sailing Day",
+    name: "Maison Margiela Replica - Sailing Day",
     mood: "Freedom",
     line: "Salt air. Open horizon. Pure freedom.",
     category: "unisex",
@@ -163,7 +163,7 @@ export const FRAGRANCES: Fragrance[] = [
   },
   {
     id: "when-rain-stops",
-    name: "Maison Margiela Replica — When the Rain Stops",
+    name: "Maison Margiela Replica - When the Rain Stops",
     mood: "Moment",
     line: "That exact moment after the rain.",
     category: "unisex",
