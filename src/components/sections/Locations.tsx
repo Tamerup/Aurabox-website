@@ -10,10 +10,13 @@ export function Locations() {
       <div className="mx-auto flex max-w-[1400px] flex-col items-center text-center">
         <Eyebrow>Locations</Eyebrow>
         <h2 className="mt-6 font-serif text-3xl font-light leading-tight text-ivory md:text-4xl">
-          Coming soon.
+          Blockfest 2026 — thank you for the first moment.
         </h2>
         <p className="mt-6 font-serif text-lg italic text-mist">
-          Tampere, Finland · 2026
+          New locations arriving soon.
+        </p>
+        <p className="mt-3 font-serif text-base italic text-mist/60">
+          Tampere, Finland
         </p>
       </div>
     </section>
