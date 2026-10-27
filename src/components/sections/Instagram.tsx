@@ -1,21 +1,27 @@
 "use client";
-
+ 
+import Image from "next/image";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
-
-const TILES = [
-  { caption: "Before the meeting.", tone: "160deg, #1c1812, #000 70%" },
-  { caption: "After hours.", tone: "200deg, #171310, #000 70%" },
-  { caption: "The last spray.", tone: "120deg, #1a1611, #000 70%" },
-  { caption: "Gate 14.", tone: "180deg, #16130f, #000 70%" },
-  { caption: "One touch.", tone: "140deg, #191510, #000 70%" },
-  { caption: "Still here.", tone: "220deg, #151210, #000 70%" },
+ 
+const INSTAGRAM_URL = "https://www.instagram.com/aurabox.eu";
+ 
+// Vaihda tekstit ja kuvat tästä. Videoruudulle anna myös "video".
+// Järjestys: lähi–kaukaa vuorotellen. Ylärivi = tuote ja tapahtuma,
+// alarivi = illan kulku (ennen → aikana → jälkeen).
+const TILES: { caption: string; src: string; video?: string }[] = [
+  { caption: "Ready when you are.", src: "/instagram/aurabox-1.jpg" },
+  { caption: "Blockfest 2026.", src: "/instagram/aurabox-2.jpg" },
+  { caption: "Under the lights.", src: "/instagram/aurabox-4.jpg" },
+  { caption: "Before the show.", src: "/instagram/aurabox-6.jpg" },
+  { caption: "Mirror check.", src: "/instagram/aurabox-5.jpg" },
+  { caption: "After hours.", src: "/instagram/aurabox-3.jpg" },
 ];
-
+ 
 export function Instagram() {
   const { ref, inView } = useInView<HTMLDivElement>({ amount: 0.3 });
-
+ 
   return (
     <section
       className="relative w-full bg-black px-6 py-32 md:px-12"
@@ -26,36 +32,59 @@ export function Instagram() {
         <h2 className="mt-6 max-w-xl font-serif text-2xl font-light leading-tight text-ivory md:text-3xl">
           Feel The Luxury.
         </h2>
-
+ 
         <div
           ref={ref}
           className="mt-16 grid w-full max-w-5xl grid-cols-2 gap-px overflow-hidden bg-hairline sm:grid-cols-3"
         >
           {TILES.map((tile, i) => (
-            <div
+            <a
               key={tile.caption}
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
               className={cn(
-                "reveal-fade group relative aspect-square overflow-hidden bg-black",
+                "reveal-fade group relative block aspect-square overflow-hidden bg-black",
                 inView && "in-view",
               )}
               style={{ ["--reveal-delay" as string]: `${(i % 3) * 0.08}s` }}
             >
-              <div
-                className="absolute inset-0 transition-transform duration-[1400ms] ease-out group-hover:scale-110"
-                style={{ background: `linear-gradient(${tile.tone})` }}
-              />
-              <div className="absolute inset-0 flex items-end bg-black/0 p-5 opacity-0 transition-all duration-500 group-hover:bg-black/40 group-hover:opacity-100">
-                <span className="font-serif text-sm italic text-ivory">
-                  {tile.caption}
-                </span>
-              </div>
-            </div>
+              {tile.video ? (
+                <video
+                  src={tile.video}
+                  poster={tile.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-label={`Aurabox at Blockfest 2026 — ${tile.caption}`}
+                  className="absolute inset-0 h-full w-full object-cover brightness-[0.85] transition-all duration-[1400ms] ease-out group-hover:scale-110 group-hover:brightness-100"
+                />
+              ) : (
+                <Image
+                  src={tile.src}
+                  alt={`Aurabox at Blockfest 2026 — ${tile.caption}`}
+                  fill
+                  sizes="(min-width: 1024px) 340px, (min-width: 640px) 33vw, 50vw"
+                  className="object-cover brightness-[0.8] transition-all duration-[1400ms] ease-out group-hover:scale-110 group-hover:brightness-100"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-black/0" />
+              <span className="absolute bottom-4 left-4 font-serif text-sm italic text-ivory md:bottom-5 md:left-5 md:text-base">
+                {tile.caption}
+              </span>
+            </a>
           ))}
         </div>
-
-        <p className="font-label mt-14 text-[11px] uppercase tracking-[0.4em] text-mist">
+ 
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="font-label mt-14 text-[11px] uppercase tracking-[0.4em] text-mist transition-colors duration-300 hover:text-gold"
+        >
           Follow @aurabox.eu
-        </p>
+        </a>
       </div>
     </section>
   );
