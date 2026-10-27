@@ -1,8 +1,4 @@
-export const PARTNER_CATEGORIES = [
-  "Airports",
-  "Grand Hotels",
-  "Shopping Destinations",
-  "Private Members Clubs",
-  "Airlines",
-  "Fashion Houses",
-];
+// Lisää uudet kumppanit tähän. Kun nimiä on 4 tai enemmän,
+// Trusted By -osio muuttuu automaattisesti rullaavaksi nauhaksi.
+export const PARTNER_CATEGORIES = ["Blockfest"];
+ 
