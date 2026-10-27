@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 // 1) Hae ilmainen avain osoitteesta web3forms.com (syötä sähköposti, avain tulee postiin)
 // 2) Liitä avain tähän lainausmerkkien sisään.
 // Ennen avainta lomake avaa sähköpostiohjelman valmiiksi täytetyllä viestillä.
-const WEB3FORMS_KEY = "";
+const WEB3FORMS_KEY = "e0167ac3-be47-4351-bf4e-020aded19142";
 const CONTACT_EMAIL = "auraboxoy@gmail.com";
  
 const TYPES = ["Event", "Venue", "Hotel", "Other"] as const;
