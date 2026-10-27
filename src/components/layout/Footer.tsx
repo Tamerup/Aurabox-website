@@ -1,7 +1,6 @@
 import Link from "next/link";
 const FOOTER_LINKS = [
   { href: "#experience", label: "Experience" },
-  { href: "#machine", label: "Machine" },
   { href: "#fragrances", label: "Fragrances" },
   { href: "#locations", label: "Locations" },
   { href: "#contact", label: "Contact" },
@@ -39,6 +38,28 @@ export function Footer() {
         <div className="font-label flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist md:items-end">
           <span>&copy; {year} Aurabox. All rights reserved.</span>
           <span>Tampere, Finland</span>
+          <a
+            href="https://www.instagram.com/aurabox.eu"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Aurabox on Instagram"
+            className="mt-2 inline-flex items-center gap-2 text-ivory transition-colors duration-300 hover:text-gold"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+            </svg>
+            @aurabox.eu
+          </a>
           <Link
             href="/privacy"
             className="transition-colors duration-300 hover:text-gold"
