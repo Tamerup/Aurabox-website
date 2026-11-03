@@ -2,18 +2,21 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useLang } from "@/i18n/LanguageContext";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
-  { href: "#experience", label: "Experience" },
-  { href: "#fragrances", label: "Fragrances" },
-  { href: "#locations", label: "Locations" },
-  { href: "#contact", label: "Contact" },
-];
-
 export function Header() {
+  const { t, lang, setLang } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: "#experience", label: t.nav.experience },
+    { href: "#how", label: t.nav.how },
+    { href: "#fragrances", label: t.nav.fragrances },
+    { href: "#locations", label: t.nav.venues },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,83 +32,86 @@ export function Header() {
     };
   }, [open]);
 
+  const LangSwitch = (
+    <div className="flex items-center" role="group" aria-label="Language">
+      <button type="button" className="ab-lang" aria-pressed={lang === "en"} onClick={() => setLang("en")}>
+        EN
+      </button>
+      <span aria-hidden className="text-[#555]">
+        |
+      </span>
+      <button type="button" className="ab-lang" aria-pressed={lang === "fi"} onClick={() => setLang("fi")}>
+        FI
+      </button>
+    </div>
+  );
+
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out",
-        scrolled
-          ? "bg-black/90 py-4 backdrop-blur-md border-b border-hairline"
-          : "bg-transparent py-7 border-b border-transparent",
+        "fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ease-out",
+        scrolled || open
+          ? "border-hairline bg-black/80 backdrop-blur-md"
+          : "border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 md:px-12">
-        <Link
-          href="#top"
-          className="font-serif text-lg tracking-[0.5em] text-gold"
-          aria-label="Aurabox — home"
-        >
+      <div className="mx-auto flex h-[72px] max-w-[1400px] items-center justify-between gap-6 px-6">
+        <Link href="#top" className="font-serif text-[22px] tracking-[0.4em] text-gold" aria-label="Aurabox — home">
           AURABOX
         </Link>
 
-        <nav
-          className="hidden items-center gap-10 md:flex"
-          aria-label="Primary"
-        >
-          {NAV_LINKS.map((link) => (
+        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-label text-[10px] font-medium uppercase tracking-[0.3em] text-mist transition-colors duration-300 hover:text-gold"
+              className="font-label text-[10px] uppercase tracking-[0.35em] text-mist transition-colors duration-300 hover:text-ivory"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <Link
-          href="#locations"
-          className="font-label hidden border border-gold/50 px-6 py-2.5 text-[10px] font-medium uppercase tracking-[0.3em] text-gold transition-all duration-300 hover:bg-gold hover:text-black md:inline-flex"
-        >
-          Find Aurabox
-        </Link>
+        <div className="hidden items-center gap-4 lg:flex">
+          {LangSwitch}
+          <Link
+            href="#locations"
+            className="font-label inline-flex min-h-11 items-center border border-gold/60 px-5 text-[10px] uppercase tracking-[0.3em] text-ivory transition-all duration-300 hover:bg-gold hover:text-black"
+          >
+            {t.nav.find}
+          </Link>
+        </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex flex-col items-end gap-1.5 md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-        >
-          <span
-            className={cn(
-              "h-px bg-ivory transition-all duration-300",
-              open ? "w-6 translate-y-[3px] rotate-45" : "w-6",
-            )}
-          />
-          <span
-            className={cn(
-              "h-px bg-ivory transition-all duration-300",
-              open ? "w-6 -translate-y-[3px] -rotate-45" : "w-4",
-            )}
-          />
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          {LangSwitch}
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="flex h-11 w-11 flex-col items-end justify-center gap-1.5"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
+            <span className={cn("h-px bg-ivory transition-all duration-300", open ? "w-6 translate-y-[3px] rotate-45" : "w-6")} />
+            <span className={cn("h-px bg-ivory transition-all duration-300", open ? "w-6 -translate-y-[3px] -rotate-45" : "w-4")} />
+          </button>
+        </div>
       </div>
 
       <nav
         className={cn(
-          "grid overflow-hidden border-hairline bg-black transition-[grid-template-rows] duration-[400ms] ease-out md:hidden",
+          "grid overflow-hidden border-hairline bg-black transition-[grid-template-rows] duration-[400ms] ease-out lg:hidden",
           open ? "grid-rows-[1fr] border-t" : "grid-rows-[0fr] border-t-0",
         )}
         aria-label="Mobile"
       >
         <div className="min-h-0">
           <div className="flex flex-col gap-7 px-6 py-10">
-            {NAV_LINKS.map((link) => (
+            {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-label text-xs font-medium uppercase tracking-[0.3em] text-mist hover:text-gold"
+                className="font-label text-xs uppercase tracking-[0.3em] text-mist hover:text-gold"
               >
                 {link.label}
               </Link>
@@ -113,9 +119,9 @@ export function Header() {
             <Link
               href="#locations"
               onClick={() => setOpen(false)}
-              className="font-label mt-2 inline-flex w-fit border border-gold/50 px-6 py-3 text-[10px] font-medium uppercase tracking-[0.3em] text-gold"
+              className="font-label mt-2 inline-flex w-fit border border-gold/50 px-6 py-3 text-[10px] uppercase tracking-[0.3em] text-gold"
             >
-              Find Aurabox
+              {t.nav.find}
             </Link>
           </div>
         </div>

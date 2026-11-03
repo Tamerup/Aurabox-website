@@ -1,49 +1,38 @@
 "use client";
- 
+
 import { useState } from "react";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { useInView } from "@/hooks/useInView";
-import { cn } from "@/lib/utils";
- 
-// 1) Hae ilmainen avain osoitteesta web3forms.com (syötä sähköposti, avain tulee postiin)
-// 2) Liitä avain tähän lainausmerkkien sisään.
-// Ennen avainta lomake avaa sähköpostiohjelman valmiiksi täytetyllä viestillä.
+import { Reveal } from "@/components/ui/Reveal";
+import { useLang } from "@/i18n/LanguageContext";
+
+// Web3Forms access key (public by design). Without a key the form opens the mail app instead.
 const WEB3FORMS_KEY = "e0167ac3-be47-4351-bf4e-020aded19142";
 const CONTACT_EMAIL = "auraboxoy@gmail.com";
- 
-const TYPES = ["Event", "Venue", "Hotel", "Other"] as const;
- 
+
 type Status = "idle" | "sending" | "sent" | "error";
- 
-const inputClass =
-  "w-full border-b border-hairline bg-transparent py-4 font-sans text-base text-ivory placeholder:text-mist/70 transition-colors duration-300 focus:border-gold focus:outline-none";
- 
+
 export function Contact() {
-  const { ref, inView } = useInView<HTMLDivElement>({ amount: 0.3 });
-  const [type, setType] = useState<(typeof TYPES)[number]>("Event");
+  const { t } = useLang();
+  const c = t.contact;
   const [status, setStatus] = useState<Status>("idle");
- 
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
- 
-    // Roskapostisuoja: botit täyttävät piilokentän
     if (data.get("botcheck")) return;
- 
+
     const name = String(data.get("name") || "");
-    const company = String(data.get("company") || "");
     const email = String(data.get("email") || "");
-    const message = String(data.get("message") || "");
- 
+    const venue = String(data.get("venue") || "");
+    const dates = String(data.get("dates") || "");
+    const subject = `Aurabox partnership – ${venue || name}`;
+
     if (!WEB3FORMS_KEY) {
-      const body = `Name: ${name}\nCompany / event: ${company}\nType: ${type}\nEmail: ${email}\n\n${message}`;
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-        `Aurabox partnership – ${company || name}`,
-      )}&body=${encodeURIComponent(body)}`;
+      const body = `Name: ${name}\nEmail: ${email}\nVenue or event: ${venue}\n\nDates and crowd:\n${dates}`;
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       return;
     }
- 
+
     setStatus("sending");
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -51,14 +40,13 @@ export function Contact() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `Aurabox partnership – ${company || name}`,
+          subject,
           from_name: "aurabox.fi",
           replyto: email,
           name,
-          company,
-          type,
           email,
-          message,
+          venue,
+          dates,
         }),
       });
       const json = await res.json();
@@ -72,133 +60,67 @@ export function Contact() {
       setStatus("error");
     }
   }
- 
+
   return (
-    <section
-      id="contact"
-      className="relative flex w-full flex-col items-center justify-center bg-black px-6 py-32"
-      aria-label="Contact"
-    >
-      <div
-        ref={ref}
-        className={cn("reveal flex w-full max-w-2xl flex-col items-center", inView && "in-view")}
-      >
-        <Eyebrow>Contact</Eyebrow>
-        <h2 className="mt-8 max-w-xl text-center font-serif text-4xl font-light leading-tight text-ivory md:text-5xl">
-          Let&rsquo;s bring Aurabox to your space.
-        </h2>
-        <p className="mt-6 max-w-md text-center font-serif text-lg italic text-mist">
-          Events, venues, hotels. Tell us about yours.
-        </p>
- 
+    <section id="contact" className="mx-auto max-w-[1100px] px-6 py-[150px]" aria-label={c.label}>
+      <div className="ab-split grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-start gap-[72px]">
+        <div className="flex flex-col gap-6">
+          <Reveal className="ab-label">{c.label}</Reveal>
+          <Reveal as="h2" className="ab-h2">
+            {c.title1} <em>{c.title2}</em>
+          </Reveal>
+          <Reveal as="p" className="ab-lead">{c.body}</Reveal>
+          <Reveal className="mt-2 flex gap-3">
+            <a href={`mailto:${CONTACT_EMAIL}`} className="ab-icon-btn" aria-label={c.emailLabel} title={CONTACT_EMAIL}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/aurabox.eu" target="_blank" rel="noreferrer" className="ab-icon-btn" aria-label={c.igLabel} title="@aurabox.eu">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+              </svg>
+            </a>
+          </Reveal>
+        </div>
+
         {status === "sent" ? (
-          <div className="mt-16 flex flex-col items-center gap-4 text-center" role="status">
-            <span className="font-serif text-3xl font-light text-gold">Thank you.</span>
-            <p className="font-serif text-lg italic text-mist">
-              We&rsquo;ll be in touch shortly.
-            </p>
+          <div className="flex flex-col gap-3 pt-14" role="status">
+            <div className="font-serif text-[44px] font-light text-gold">{c.thanks}</div>
+            <div className="ab-lead">{c.thanks2}</div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="mt-14 flex w-full flex-col gap-2" noValidate={false}>
-            <input
-              type="checkbox"
-              name="botcheck"
-              tabIndex={-1}
-              autoComplete="off"
-              className="hidden"
-              aria-hidden="true"
-            />
- 
-            <fieldset className="mb-6 flex flex-col items-center gap-4">
-              <legend className="font-label mb-4 w-full text-center text-[10px] uppercase tracking-[0.35em] text-mist">
-                What are you looking for?
-              </legend>
-              <div className="flex flex-wrap justify-center gap-3">
-                {TYPES.map((t) => (
-                  <label
-                    key={t}
-                    className={cn(
-                      "font-label flex min-h-11 cursor-pointer items-center border px-5 text-[10px] uppercase tracking-[0.3em] transition-all duration-300",
-                      type === t
-                        ? "border-gold bg-gold text-black"
-                        : "border-gold/40 text-ivory hover:border-gold",
-                    )}
-                  >
-                    <input
-                      type="radio"
-                      name="type"
-                      value={t}
-                      checked={type === t}
-                      onChange={() => setType(t)}
-                      className="sr-only"
-                    />
-                    {t}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
- 
-            <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
-              <label className="block">
-                <span className="sr-only">Name</span>
-                <input name="name" type="text" required placeholder="Name" autoComplete="name" className={inputClass} />
-              </label>
-              <label className="block">
-                <span className="sr-only">Company or event</span>
-                <input
-                  name="company"
-                  type="text"
-                  required
-                  placeholder="Company / event"
-                  autoComplete="organization"
-                  className={inputClass}
-                />
-              </label>
-            </div>
-            <label className="block">
-              <span className="sr-only">Email</span>
-              <input name="email" type="email" required placeholder="Email" autoComplete="email" className={inputClass} />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-1.5">
+            <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+            <label>
+              <span className="sr-only">{c.name}</span>
+              <input className="ab-field" name="name" type="text" placeholder={c.name} autoComplete="name" required />
             </label>
-            <label className="block">
-              <span className="sr-only">Message</span>
-              <textarea
-                name="message"
-                rows={3}
-                placeholder="Tell us about your space, date or audience (optional)"
-                className={cn(inputClass, "resize-none")}
-              />
+            <label>
+              <span className="sr-only">{c.email}</span>
+              <input className="ab-field" name="email" type="email" placeholder={c.email} autoComplete="email" required />
             </label>
- 
-            <div className="mt-10 flex flex-col items-center gap-4">
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="font-label group inline-flex min-h-14 items-center gap-3 bg-gold px-12 text-[11px] font-medium uppercase tracking-[0.35em] text-black transition-all duration-500 hover:bg-ivory disabled:opacity-60"
-              >
-                {status === "sending" ? "Sending…" : "Send enquiry"}
-                <span
-                  aria-hidden
-                  className="inline-block h-px w-5 origin-left bg-current transition-transform duration-500 group-hover:scale-x-150"
-                />
-              </button>
-              {status === "error" && (
-                <p className="font-serif text-base italic text-gold" role="alert">
-                  Something went wrong. Please email us directly.
-                </p>
-              )}
-            </div>
+            <label>
+              <span className="sr-only">{c.venue}</span>
+              <input className="ab-field" name="venue" type="text" placeholder={c.venue} autoComplete="organization" required />
+            </label>
+            <label>
+              <span className="sr-only">{c.dates}</span>
+              <textarea className="ab-field resize-none" name="dates" rows={3} placeholder={c.datesPlaceholder} />
+            </label>
+            <button type="submit" className="ab-btn-s mt-8 self-start" disabled={status === "sending"}>
+              {status === "sending" ? c.sending : c.send} <span className="ab-dash" aria-hidden />
+            </button>
+            {status === "error" && (
+              <p className="mt-3 font-serif italic text-gold" role="alert">
+                {c.error}
+              </p>
+            )}
           </form>
         )}
- 
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="mt-14 font-serif text-lg italic text-mist transition-colors duration-300 hover:text-gold"
-        >
-          or write to {CONTACT_EMAIL}
-        </a>
-        <p className="font-label mt-4 text-[10px] uppercase tracking-[0.4em] text-mist/70">
-          Tampere, Finland
-        </p>
       </div>
     </section>
   );

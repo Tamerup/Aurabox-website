@@ -1,11 +1,17 @@
+"use client";
+
 import Link from "next/link";
-const FOOTER_LINKS = [
-  { href: "#experience", label: "Experience" },
-  { href: "#fragrances", label: "Fragrances" },
-  { href: "#locations", label: "Locations" },
-  { href: "#contact", label: "Contact" },
-];
+import { useLang } from "@/i18n/LanguageContext";
+
 export function Footer() {
+  const { t } = useLang();
+  const FOOTER_LINKS = [
+    { href: "#experience", label: t.nav.experience },
+    { href: "#how", label: t.nav.how },
+    { href: "#fragrances", label: t.nav.fragrances },
+    { href: "#locations", label: t.nav.venues },
+    { href: "#contact", label: t.nav.contact },
+  ];
   const year = new Date().getFullYear();
   return (
     <footer className="w-full border-t border-hairline bg-black px-6 py-16 md:px-12">
@@ -64,7 +70,7 @@ export function Footer() {
             href="/privacy"
             className="transition-colors duration-300 hover:text-gold"
           >
-            Tietosuoja & Käyttöehdot
+            {t.nav.privacy}
           </Link>
         </div>
       </div>

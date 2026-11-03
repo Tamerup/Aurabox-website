@@ -1,53 +1,136 @@
-import { Button } from "@/components/ui/Button";
+"use client";
+
+import { MachineFront, MachineSide } from "@/components/ui/MachineFront";
+import { useScrollProgress } from "@/hooks/useScrollProgress";
+import { useLang } from "@/i18n/LanguageContext";
+
+const clamp = (v: number) => Math.max(0, Math.min(1, v));
+const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+
+// Camera per moment: rotation, tilt, zoom and pan (cqw) of the 3D machine
+const CAMS = [
+  { ry: -30, rx: 8, z: 1, tx: 0, ty: 0 },
+  { ry: -8, rx: 4, z: 1.55, tx: 31, ty: 22 }, // bottles and buttons
+  { ry: 38, rx: 8, z: 1, tx: 0, ty: 0 }, // the other side
+  { ry: 8, rx: 4, z: 1.6, tx: -32, ty: 13 }, // screen and card reader
+  { ry: -14, rx: 10, z: 1.05, tx: 0, ty: 0 },
+];
+const IDLE = { ry: -18, rx: 8, z: 1, tx: 0, ty: 0 };
 
 export function Hero() {
+  const { t } = useLang();
+  const { ref, progress: p, width: w } = useScrollProgress<HTMLElement>();
+  const mobile = w < 820;
+
+  const h = ease(clamp(p / 0.15));
+  const s = clamp((p - 0.15) / 0.8);
+  const idx = Math.min(4, Math.floor(s * 5));
+  const active = h > 0.55;
+
+  const shift = mobile ? 0 : h * Math.min(w * 0.2, 290);
+  const ty = mobile ? -60 * h : 0;
+  const scale = mobile ? 0.82 - 0.12 * h : 1 - 0.06 * h;
+  const pulse = 0.5 + 0.5 * Math.abs(Math.sin(s * Math.PI * 5));
+  const cam = active ? CAMS[idx] : IDLE;
+  const led = active && idx === 4 ? 0.95 : 0.55;
+
+  const screen = (
+    <div className="ab-pane">
+      <div className="ab-pane-logo">A</div>
+      <div className="ab-pane-kick">{active ? `0${idx + 1} / 05` : t.hero.welcome}</div>
+      <div className="ab-pane-title">{active ? t.moments[idx][0] : t.hero.touch}</div>
+    </div>
+  );
+
   return (
-    <section
-      id="top"
-      className="relative flex h-[100svh] min-h-[720px] w-full items-center justify-center overflow-hidden bg-black"
-      aria-label="Aurabox — Feel The Luxury"
-    >
-      {/* Atmosphere */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_20%,#151312_0%,#000000_65%)]" />
+    <section ref={ref} id="experience" className="ab-hero" aria-label="Aurabox">
+      <div id="top" className="ab-hero-stage">
+        <div className="ab-hero-spot" aria-hidden style={{ transform: `translateX(${shift}px)` }} />
         <div
-          className="animate-drift absolute left-1/2 top-1/2 h-[70vh] w-[70vh] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.16] blur-[120px]"
+          className="ab-hero-glow"
+          aria-hidden
           style={{
-            background:
-              "radial-gradient(circle, var(--color-gold) 0%, transparent 70%)",
+            transform: `translateX(${shift}px)`,
+            background: `radial-gradient(circle, rgba(212,175,55,${(0.16 + 0.16 * h * pulse).toFixed(3)}), rgba(212,175,55,0) 62%)`,
           }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,transparent_70%,#000_100%)]" />
-      </div>
+        <div className="ab-hero-floor" aria-hidden />
 
-      <div className="relative z-10 flex flex-col items-center px-6 text-center">
-        <span className="animate-fade-in font-serif text-sm tracking-[0.55em] text-gold opacity-0 [animation-delay:0.1s] md:text-base">
-        AURABOX
-        </span>
-
-        <h1 className="animate-fade-up mt-8 font-serif text-[13vw] font-light leading-[0.95] text-ivory opacity-0 [animation-delay:0.15s] sm:text-[9vw] md:text-[6.5vw] lg:text-[88px]">
-          Feel The Luxury.
+        <h1 className="m-0 font-light">
+          <span className="ab-hero-word ab-hero-word--l" style={{ opacity: 1 - h, transform: `translateX(${-h * 280}px)` }}>
+            <span className="ab-hero-enter">Feel The</span>
+          </span>
+          <span className="ab-hero-word ab-hero-word--r" style={{ opacity: 1 - h, transform: `translateX(${h * 280}px)` }}>
+            <span className="ab-hero-enter">Luxury.</span>
+          </span>
         </h1>
 
-        <p className="animate-fade-up mt-7 font-serif text-lg italic text-mist opacity-0 [animation-delay:0.8s] md:text-xl">
-          Luxury. Exactly when it matters.
-        </p>
-
-        <div className="animate-fade-up mt-14 opacity-0 [animation-delay:1.3s]">
-          <Button href="#locations" variant="outline">
-            Find Aurabox
-          </Button>
+        <div
+          className="ab-hero-machine"
+          style={{ transform: `translate(-50%, -50%) translate(${shift}px, ${ty}px) scale(${scale})` }}
+        >
+          <div className="ab-hero-machine-inner">
+            <div
+              aria-hidden
+              className="absolute"
+              style={{ left: "-30%", right: "-30%", bottom: "-6cqw", height: "16cqw", background: "radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.95), rgba(0,0,0,0) 70%)" }}
+            />
+            <div
+              role="img"
+              aria-label="Illustration of the Aurabox machine: five bottles behind glass, a button under each, a touchscreen and a gold-framed card reader, with gold LED strips down both sides"
+              className="ab-3d"
+              style={{ transform: `translate(${cam.tx}cqw, ${cam.ty}cqw) scale(${cam.z}) rotateX(${-cam.rx}deg) rotateY(${cam.ry}deg)` }}
+            >
+              <div className="ab-face" style={{ inset: 0, transform: "translateZ(11cqw)" }}>
+                <MachineFront pick={active && idx === 1 ? 1 : 0} tap={active && idx === 3 ? 0.6 : 0} led={led} screen={screen} />
+              </div>
+              <div className="ab-face" style={{ inset: 0, transform: "rotateY(180deg) translateZ(11cqw)", background: "#070707", borderRadius: "2.6cqw" }} />
+              <div className="ab-face" style={{ left: "39cqw", top: 0, width: "22cqw", height: "60cqw", transform: "rotateY(90deg) translateZ(50cqw)" }}>
+                <MachineSide side="right" led={led} />
+              </div>
+              <div className="ab-face" style={{ left: "39cqw", top: 0, width: "22cqw", height: "60cqw", transform: "rotateY(-90deg) translateZ(50cqw)" }}>
+                <MachineSide side="left" led={led} />
+              </div>
+              <div
+                className="ab-face"
+                style={{ left: 0, top: "19cqw", width: "100cqw", height: "22cqw", transform: "rotateX(90deg) translateZ(30cqw)", background: "linear-gradient(180deg, #161616, #0c0c0c)", borderRadius: "1.2cqw" }}
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div
-        className="animate-fade-in absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 opacity-0 [animation-delay:2s]"
-        aria-hidden
-      >
-        <span className="h-12 w-px bg-gradient-to-b from-transparent via-gold/70 to-transparent" />
-        <span className="font-label text-[9px] uppercase tracking-[0.4em] text-mist">
-          Scroll
-        </span>
+        <div className="ab-hero-foot" style={{ opacity: 1 - h }}>
+          <p className="font-serif text-xl italic text-[#b8b8b8]">{t.hero.sub}</p>
+          <div className="ab-cue" />
+        </div>
+
+        <div className="ab-moments">
+          {t.moments.map(([title, line], i) => (
+            <div
+              key={i}
+              className="ab-moment"
+              aria-hidden={i !== idx || !active}
+              style={{
+                opacity: i === idx ? clamp((h - 0.55) * 2.2) : 0,
+                transform: `translateY(${i < idx ? -28 : i > idx ? 28 : 0}px)`,
+              }}
+            >
+              <div className="ab-label">
+                0{i + 1} / 05 · {t.hero.label}
+              </div>
+              <h2>{title}</h2>
+              <p className="ab-lead">{line}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="ab-progress ab-hero-progress" style={{ opacity: clamp((h - 0.5) * 2) }}>
+          {t.moments.map((_, i) => (
+            <div key={i}>
+              <div style={{ width: `${clamp(s * 5 - i) * 100}%` }} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

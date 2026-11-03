@@ -1,6 +1,9 @@
+"use client";
+
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Marquee } from "@/components/ui/Marquee";
 import { PARTNER_CATEGORIES } from "@/data/partners";
+import { useLang } from "@/i18n/LanguageContext";
  
 // Rullaava nauha vasta kun nimiä on tarpeeksi
 const MARQUEE_MIN = 4;
@@ -16,15 +19,16 @@ function PartnerTile({ name }: { name: string }) {
 }
  
 export function Partners() {
+  const { t } = useLang();
   const useMarquee = PARTNER_CATEGORIES.length >= MARQUEE_MIN;
  
   return (
     <section
-      className="relative w-full bg-black py-24 md:py-32"
+      className="ab-rule relative w-full bg-black py-24 md:py-28"
       aria-label="Trusted by"
     >
       <div className="mx-auto flex max-w-[1400px] flex-col items-center px-6 text-center md:px-12">
-        <Eyebrow>Trusted By</Eyebrow>
+        <Eyebrow>{t.trusted}</Eyebrow>
       </div>
  
       {useMarquee ? (

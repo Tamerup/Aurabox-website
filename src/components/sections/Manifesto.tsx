@@ -1,48 +1,18 @@
 "use client";
 
-import { useInView } from "@/hooks/useInView";
-import { cn } from "@/lib/utils";
-
-const LINES = ["There is always", "a moment", "before", "the moment."];
+import { Reveal } from "@/components/ui/Reveal";
+import { useLang } from "@/i18n/LanguageContext";
 
 export function Manifesto() {
-  const { ref, inView } = useInView<HTMLDivElement>({ amount: 0.6 });
-
+  const { t } = useLang();
+  const [a, b, c, d] = t.manifesto;
+  const line = "m-0 font-serif text-[48px] font-light leading-[1.04] md:text-[84px]";
   return (
-    <section
-      className="relative flex min-h-[100svh] w-full flex-col items-center justify-center bg-black px-6 py-32"
-      aria-label="Manifesto"
-    >
-      <div
-        ref={ref}
-        className="mx-auto flex max-w-4xl flex-col items-center text-center"
-      >
-        <div className="font-serif text-[11vw] font-light leading-[1.05] text-ivory sm:text-[8vw] md:text-[64px] lg:text-[76px]">
-          {LINES.map((line, i) => (
-            <div
-              key={line}
-              className={cn(
-                "reveal",
-                inView && "in-view",
-                i === LINES.length - 1 ? "italic text-gold" : "",
-              )}
-              style={{ ["--reveal-delay" as string]: `${i * 0.18}s` }}
-            >
-              {line}
-            </div>
-          ))}
-        </div>
-
-        <p
-          className={cn(
-            "reveal-fade mt-16 font-label text-[11px] uppercase tracking-[0.4em] text-mist",
-            inView && "in-view",
-          )}
-          style={{ ["--reveal-delay" as string]: "0.9s" }}
-        >
-          Aurabox exists for that moment.
-        </p>
-      </div>
+    <section className="mx-auto max-w-[1100px] px-6 py-[140px] text-center" aria-label="Manifesto">
+      <Reveal as="p" className={line}>{a}</Reveal>
+      <Reveal as="p" className={line} delay={0.1}>{b}</Reveal>
+      <Reveal as="p" className={`${line} italic text-gold`} delay={0.2}>{c}</Reveal>
+      <Reveal as="p" className="ab-label ab-label--mist mt-12" delay={0.3}>{d}</Reveal>
     </section>
   );
 }

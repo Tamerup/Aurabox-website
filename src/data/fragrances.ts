@@ -3,6 +3,7 @@ export type Fragrance = {
   name: string;
   mood: string;
   line: string;
+  lineFi: string;
   category: "him" | "her" | "unisex";
   notes: {
     top: string;
@@ -18,6 +19,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Parfums de Marly - Layton Exclusif",
     mood: "Legacy",
     line: "Warm, sweet, old money.",
+    lineFi: "Lämmin, makea, vanhaa rahaa.",
     category: "him",
     notes: {
       top: "Apple, Bergamot, Nutmeg",
@@ -30,6 +32,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Jean Paul Gaultier - Le Male Elixir",
     mood: "Modern",
     line: "Addictive and unapologetically bold.",
+    lineFi: "Koukuttava ja anteeksipyytelemättä rohkea.",
     category: "him",
     notes: {
       top: "Lavender, Cardamom",
@@ -42,6 +45,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Hermès - Terre d'Hermès EDP Intense",
     mood: "Timeless",
     line: "Masculine, earthy, refined.",
+    lineFi: "Maskuliininen, maanläheinen, hienostunut.",
     category: "him",
     notes: {
       top: "Grapefruit, Pepper",
@@ -54,6 +58,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Prada - Luna Rossa Ocean",
     mood: "Freedom",
     line: "Open sea. Pure confidence.",
+    lineFi: "Avomeri. Puhdasta itsevarmuutta.",
     category: "him",
     notes: {
       top: "Bergamot, Neroli",
@@ -66,6 +71,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "YSL - MYSLF",
     mood: "Power",
     line: "Bold, modern, unapologetic.",
+    lineFi: "Rohkea, moderni, anteeksipyytelemätön.",
     category: "him",
     notes: {
       top: "Bergamot, Cardamom, Grapefruit",
@@ -80,6 +86,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Hermès - Barénia Intense",
     mood: "Mystique",
     line: "Leather, mystery, strength.",
+    lineFi: "Nahkaa, mysteeriä, voimaa.",
     category: "her",
     notes: {
       top: "Butterfly Lily",
@@ -92,6 +99,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Jean Paul Gaultier - Divine Le Parfum",
     mood: "Feminine",
     line: "Floral, warm, irresistible.",
+    lineFi: "Kukkainen, lämmin, vastustamaton.",
     category: "her",
     notes: {
       top: "Frangipani, Sea Salt",
@@ -104,6 +112,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Initio - Atomic Rose",
     mood: "Obsession",
     line: "Dark, intense, addictive.",
+    lineFi: "Tumma, intensiivinen, koukuttava.",
     category: "her",
     notes: {
       top: "Bulgarian Rose, Jasmine",
@@ -116,6 +125,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Giorgio Armani - Sì Intense",
     mood: "Power",
     line: "Sensual, timeless, powerful.",
+    lineFi: "Aistillinen, ajaton, voimakas.",
     category: "her",
     notes: {
       top: "Blackcurrant, Bergamot",
@@ -128,6 +138,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Prada - Paradoxe",
     mood: "Confidence",
     line: "Elegant, fresh, self-assured.",
+    lineFi: "Elegantti, raikas, itsevarma.",
     category: "her",
     notes: {
       top: "Neroli, Bergamot",
@@ -142,6 +153,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Maison Francis Kurkdjian - Baccarat Rouge 540",
     mood: "Iconic",
     line: "Electric. Unique. Obsession.",
+    lineFi: "Sähköinen. Ainutlaatuinen. Pakkomielle.",
     category: "unisex",
     notes: {
       top: "Saffron, Jasmine",
@@ -154,6 +166,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Maison Margiela Replica - Sailing Day",
     mood: "Freedom",
     line: "Salt air. Open horizon. Pure freedom.",
+    lineFi: "Suolainen ilma. Avoin horisontti. Puhdasta vapautta.",
     category: "unisex",
     notes: {
       top: "Bergamot, Sea Notes",
@@ -166,6 +179,7 @@ export const FRAGRANCES: Fragrance[] = [
     name: "Maison Margiela Replica - When the Rain Stops",
     mood: "Moment",
     line: "That exact moment after the rain.",
+    lineFi: "Juuri se hetki sateen jälkeen.",
     category: "unisex",
     notes: {
       top: "Petrichor, Aldehydes",
