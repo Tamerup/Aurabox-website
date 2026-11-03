@@ -44,7 +44,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="mb-4 text-base text-ivory">Käyttöehdot</h2>
             <p className="mb-3"><span className="text-ivory">Palvelu</span><br />
-            Aurabox-hajuvesiautomaatit tarjoavat luksushajuvesisuihkauksia julkisissa tiloissa. Palvelu on tarkoitettu täysi-ikäisille.</p>
+            Aurabox-hajuvesiautomaatit tarjoavat luksushajuvesisuihkauksia julkisissa tiloissa.</p>
             <p className="mb-3"><span className="text-ivory">Tuoteturvallisuus</span><br />
             Hajuvedet ovat kosmeettisia tuotteita. Vältä silmäkontaktia. Pidä poissa lasten ulottuvilta. Älä suihkuta suoraan ihoon jos sinulla on herkkä iho tai allergia. Ulkoiseen käyttöön ainoastaan.</p>
             <p className="mb-3"><span className="text-ivory">Ostoehdot</span><br />
