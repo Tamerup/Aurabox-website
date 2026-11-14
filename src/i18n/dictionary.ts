@@ -55,8 +55,8 @@ const en = {
       },
       {
         label: "Space",
-        title: "A spot and a socket",
-        body: "You give us the space and one power socket. We take care of the rest.",
+        title: "Just the space",
+        body: "You give us the space. We take care of the rest.",
       },
     ],
   },
@@ -89,7 +89,7 @@ const en = {
     label: "For venues",
     title1: "Made for",
     title2: "the way in.",
-    body: "You give us the space and a socket. We bring it, fill it, service it and take it away.",
+    body: "You give us the space. We take care of the rest: delivery, refills, service and pick-up.",
     tabs: [
       ["Festival", "Give your crowd a moment they’ll remember."],
       ["Venue", "Let your guests freshen up before the night goes on."],
@@ -178,8 +178,8 @@ const fi: Dictionary = {
       },
       {
         label: "Tila",
-        title: "Paikka ja pistorasia",
-        body: "Te annatte tilan ja yhden pistorasian. Me hoidamme loput.",
+        title: "Vain tila",
+        body: "Te annatte tilan, me hoidamme loput.",
       },
     ],
   },
@@ -212,7 +212,7 @@ const fi: Dictionary = {
     label: "Kumppaneille",
     title1: "Tehty",
     title2: "ensivaikutelmaan.",
-    body: "Te annatte tilan ja pistorasian. Me tuomme, täytämme, huollamme ja haemme pois.",
+    body: "Te annatte tilan, me hoidamme loput: toimituksen, täytöt, huollon ja noudon.",
     tabs: [
       ["Festivaali", "Anna yleisöllesi hetki, jonka se muistaa."],
       ["Klubi & baari", "Anna asiakkaidesi raikastua ennen kuin ilta jatkuu."],
