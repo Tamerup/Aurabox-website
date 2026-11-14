@@ -12,7 +12,6 @@ const CAMS = [
   { ry: -30, rx: 8, z: 1, tx: 0, ty: 0 },
   { ry: -8, rx: 4, z: 1.55, tx: 31, ty: 22 }, // bottles and buttons
   { ry: 38, rx: 8, z: 1, tx: 0, ty: 0 }, // the other side
-  { ry: 8, rx: 4, z: 1.6, tx: -32, ty: 13 }, // screen and card reader
   { ry: -14, rx: 10, z: 1.05, tx: 0, ty: 0 },
 ];
 const IDLE = { ry: -18, rx: 8, z: 1, tx: 0, ty: 0 };
@@ -24,20 +23,21 @@ export function Hero() {
 
   const h = ease(clamp(p / 0.15));
   const s = clamp((p - 0.15) / 0.8);
-  const idx = Math.min(4, Math.floor(s * 5));
+  const n = t.moments.length;
+  const idx = Math.min(n - 1, Math.floor(s * n));
   const active = h > 0.55;
 
   const shift = mobile ? 0 : h * Math.min(w * 0.2, 290);
   const ty = mobile ? -60 * h : 0;
   const scale = mobile ? 0.82 - 0.12 * h : 1 - 0.06 * h;
-  const pulse = 0.5 + 0.5 * Math.abs(Math.sin(s * Math.PI * 5));
-  const cam = active ? CAMS[idx] : IDLE;
-  const led = active && idx === 4 ? 0.95 : 0.55;
+  const pulse = 0.5 + 0.5 * Math.abs(Math.sin(s * Math.PI * n));
+  const cam = active ? CAMS[Math.min(idx, CAMS.length - 1)] : IDLE;
+  const led = active && idx === n - 1 ? 0.95 : 0.55;
 
   const screen = (
     <div className="ab-pane">
       <div className="ab-pane-logo">A</div>
-      <div className="ab-pane-kick">{active ? `0${idx + 1} / 05` : t.hero.welcome}</div>
+      <div className="ab-pane-kick">{active ? `0${idx + 1} / 0${n}` : t.hero.welcome}</div>
       <div className="ab-pane-title">{active ? t.moments[idx][0] : t.hero.touch}</div>
     </div>
   );
@@ -82,7 +82,7 @@ export function Hero() {
               style={{ transform: `translate(${cam.tx}cqw, ${cam.ty}cqw) scale(${cam.z}) rotateX(${-cam.rx}deg) rotateY(${cam.ry}deg)` }}
             >
               <div className="ab-face" style={{ inset: 0, transform: "translateZ(11cqw)" }}>
-                <MachineFront pick={active && idx === 1 ? 1 : 0} tap={active && idx === 3 ? 0.6 : 0} led={led} screen={screen} />
+                <MachineFront pick={active && idx === 1 ? 1 : 0} tap={0} led={led} screen={screen} />
               </div>
               <div className="ab-face" style={{ inset: 0, transform: "rotateY(180deg) translateZ(11cqw)", background: "#070707", borderRadius: "2.6cqw" }} />
               <div className="ab-face" style={{ left: "39cqw", top: 0, width: "22cqw", height: "60cqw", transform: "rotateY(90deg) translateZ(50cqw)" }}>
@@ -105,7 +105,7 @@ export function Hero() {
         </div>
 
         <div className="ab-moments">
-          {t.moments.map(([title, line], i) => (
+          {t.moments.map(([title, line, cat], i) => (
             <div
               key={i}
               className="ab-moment"
@@ -116,7 +116,7 @@ export function Hero() {
               }}
             >
               <div className="ab-label">
-                0{i + 1} / 05 · {t.hero.label}
+                0{i + 1} / 0{n} · {cat}
               </div>
               <h2>{title}</h2>
               <p className="ab-lead">{line}</p>
@@ -127,7 +127,7 @@ export function Hero() {
         <div className="ab-progress ab-hero-progress" style={{ opacity: clamp((h - 0.5) * 2) }}>
           {t.moments.map((_, i) => (
             <div key={i}>
-              <div style={{ width: `${clamp(s * 5 - i) * 100}%` }} />
+              <div style={{ width: `${clamp(s * n - i) * 100}%` }} />
             </div>
           ))}
         </div>
