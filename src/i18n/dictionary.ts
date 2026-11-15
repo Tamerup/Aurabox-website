@@ -58,7 +58,7 @@ const en = {
       },
       {
         label: "Within reach",
-        title: "A touch of luxury, in the middle of life",
+        title: "Luxury for this moment",
         body: "Your guests enjoy a designer fragrance in the moment, without buying a whole bottle.",
       },
     ],
@@ -224,7 +224,7 @@ const fi: Dictionary = {
       },
       {
         label: "Ulottuvilla",
-        title: "Pala luksusta keskellä elämää",
+        title: "Luksusta juuri tähän hetkeen",
         body: "Vieraasi nauttivat design-tuoksusta juuri sillä hetkellä, ilman että kenenkään tarvitsee ostaa kokonaista pulloa.",
       },
     ],
