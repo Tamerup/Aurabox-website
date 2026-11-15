@@ -30,7 +30,7 @@ const en = {
   how: {
     label: "How it works",
     steps: [
-      ["Choose.", "Six well-known fragrances, one for this moment."],
+      ["Choose.", "Five well-known fragrances, one for this moment."],
       ["Confirm.", "Card, phone or watch. In seconds."],
       ["Feel The Luxury.", "Wrist to the nozzle, and you’re ready."],
     ] as [string, string][],
@@ -54,7 +54,7 @@ const en = {
       {
         label: "Your selection",
         title: "Chosen for your crowd",
-        body: "Six fragrances in every machine, usually two for him, two for her and two unisex, picked with you from our range.",
+        body: "Five fragrances in every machine, usually two for her, two for him and one unisex, picked with you from our range.",
       },
       {
         label: "Within reach",
@@ -134,7 +134,7 @@ const en = {
       ["What does it cost?", "It depends on the model. As a service, you pay for the booking and sprays are free for your guests. With revenue share, guests pay per spray and you get a share. Ask us for an offer."],
       ["Who fills and services the machine?", "We do. Delivery, refills, service and pick-up are included in both models."],
       ["What do you need from us?", "Just the space. We take care of the rest."],
-      ["Can we choose the fragrances?", "Yes. Each machine holds six fragrances, usually two for him, two for her and two unisex, chosen with you from our range to suit your crowd."],
+      ["Can we choose the fragrances?", "Yes. Each machine holds five fragrances, usually two for her, two for him and one unisex, chosen with you from our range to suit your crowd."],
       ["Are the fragrances genuine?", "Yes. Original bottles from the fragrance houses, never copies."],
       ["How do guests pay?", "Contactless with card, phone or watch. With the service model, sprays are free."],
       ["For one event or longer?", "Both. Tell us your dates and we will suggest the right setup."],
@@ -196,7 +196,7 @@ const fi: Dictionary = {
   how: {
     label: "Näin se toimii",
     steps: [
-      ["Valitse.", "Kuusi tunnettua tuoksua, yksi juuri tähän hetkeen."],
+      ["Valitse.", "Viisi tunnettua tuoksua, yksi juuri tähän hetkeen."],
       ["Vahvista.", "Kortti, puhelin tai kello. Sekunneissa."],
       ["Feel The Luxury.", "Ranne suuttimen eteen, ja olet valmis."],
     ],
@@ -220,7 +220,7 @@ const fi: Dictionary = {
       {
         label: "Teidän valikoimanne",
         title: "Valittu yleisönne mukaan",
-        body: "Jokaisessa koneessa kuusi tuoksua, yleensä kaksi miehille, kaksi naisille ja kaksi unisex-tuoksua. Valitsemme ne yhdessä valikoimastamme.",
+        body: "Jokaisessa koneessa viisi tuoksua, yleensä kaksi naisille, kaksi miehille ja yksi unisex. Valitsemme ne yhdessä valikoimastamme.",
       },
       {
         label: "Ulottuvilla",
@@ -300,7 +300,7 @@ const fi: Dictionary = {
       ["Mitä yhteistyö maksaa?", "Riippuu mallista. Palveluna maksatte varauksesta, ja suihkaukset ovat vieraille ilmaisia. Tuotonjaossa vieraat maksavat suihkauksesta, ja saatte osuuden. Pyydä tarjous."],
       ["Kuka täyttää ja huoltaa koneen?", "Me. Toimitus, täytöt, huolto ja nouto sisältyvät molempiin malleihin."],
       ["Mitä tarvitsette meiltä?", "Vain tilan. Me hoidamme loput."],
-      ["Voimmeko valita tuoksut?", "Kyllä. Jokaisessa koneessa on kuusi tuoksua, yleensä kaksi miehille, kaksi naisille ja kaksi unisex-tuoksua. Valitsemme ne yhdessä valikoimastamme yleisönne mukaan."],
+      ["Voimmeko valita tuoksut?", "Kyllä. Jokaisessa koneessa on viisi tuoksua, yleensä kaksi naisille, kaksi miehille ja yksi unisex. Valitsemme ne yhdessä valikoimastamme yleisönne mukaan."],
       ["Ovatko tuoksut aitoja?", "Kyllä. Alkuperäiset pullot suoraan tuoksutaloilta, ei koskaan kopioita."],
       ["Miten vieraat maksavat?", "Lähimaksulla kortilla, puhelimella tai kellolla. Palvelumallissa suihkaukset ovat ilmaisia."],
       ["Yksittäiseen tapahtumaan vai pidemmäksi aikaa?", "Molempiin. Kerro päivät, niin ehdotamme sopivan ratkaisun."],
