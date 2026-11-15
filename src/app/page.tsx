@@ -1,7 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Manifesto } from "@/components/sections/Manifesto";
 import { FragranceMarquee } from "@/components/sections/FragranceMarquee";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Genuine } from "@/components/sections/Genuine";
@@ -9,7 +8,7 @@ import { Fragrances } from "@/components/sections/Fragrances";
 import { BlockfestGallery } from "@/components/sections/BlockfestGallery";
 import { Partners } from "@/components/sections/Partners";
 import { Venues } from "@/components/sections/Venues";
-import { Instagram } from "@/components/sections/Instagram";
+import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 
@@ -20,7 +19,7 @@ const jsonLd = {
   url: "https://www.aurabox.fi",
   slogan: "Feel The Luxury.",
   description:
-    "Aurabox is a luxury fragrance experience: genuine designer and niche fragrances, one spray at a time, at festivals, venues and hotels.",
+    "Aurabox is a luxury fragrance machine for events, venues and hotels in Finland: genuine designer and niche fragrances, one spray at a time. Available as a service or on revenue share.",
   areaServed: "FI",
 };
 
@@ -31,15 +30,14 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Manifesto />
         <FragranceMarquee />
         <HowItWorks />
+        <Venues />
         <Genuine />
         <Fragrances />
         <BlockfestGallery />
         <Partners />
-        <Venues />
-        <Instagram />
+        <Faq />
         <Contact />
       </main>
       <Footer />

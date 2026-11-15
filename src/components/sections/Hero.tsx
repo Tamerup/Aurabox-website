@@ -101,7 +101,10 @@ export function Hero() {
 
         <div className="ab-hero-foot" style={{ opacity: 1 - h }}>
           <p className="font-serif text-xl italic text-[#b8b8b8]">{t.hero.sub}</p>
-          <div className="ab-cue" />
+          <p className="max-w-[560px] px-6 text-center text-sm leading-relaxed text-mist">{t.hero.b2b}</p>
+          <a href="#contact" className="ab-btn-s mt-1" style={{ minHeight: 52, pointerEvents: h > 0.9 ? "none" : undefined }}>
+            {t.hero.cta} <span className="ab-dash" aria-hidden />
+          </a>
         </div>
 
         <div className="ab-moments">

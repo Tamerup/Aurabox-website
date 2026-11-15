@@ -29,6 +29,14 @@ export function BlockfestGallery() {
             {b.title1} <em>{b.title2}</em>
           </h2>
         </Reveal>
+        <Reveal className="mt-10 flex flex-wrap gap-12">
+          {b.stats.map(([n, l]) => (
+            <div key={l} className="flex flex-col gap-1.5">
+              <div className="font-serif text-[56px] font-light leading-none text-gold">{n}</div>
+              <div className="ab-label ab-label--mist">{l}</div>
+            </div>
+          ))}
+        </Reveal>
       </div>
       <Marquee
         className="mt-[60px]"

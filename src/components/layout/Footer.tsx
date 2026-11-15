@@ -43,7 +43,7 @@ export function Footer() {
         </nav>
         <div className="font-label flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-mist md:items-end">
           <span>&copy; {year} Aurabox. All rights reserved.</span>
-          <span>Tampere, Finland</span>
+          <span>GWP Group Oy · {t.nav.bizId} 3637245-5 · Tampere</span>
           <a
             href="https://www.instagram.com/aurabox.eu"
             target="_blank"

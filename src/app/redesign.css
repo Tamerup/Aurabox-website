@@ -77,7 +77,7 @@ body { --ab-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif; 
 .ab-face { position: absolute; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 
 /* ---------- Hero ---------- */
-.ab-hero { position: relative; height: 3800px; }
+.ab-hero { position: relative; height: 3000px; }
 .ab-hero-stage { position: sticky; top: 0; height: 100svh; min-height: 620px; overflow: hidden; }
 .ab-hero-spot { position: absolute; left: 50%; top: -20%; width: 900px; height: 120%; margin-left: -450px; background: radial-gradient(ellipse 35% 60% at 50% 0%, rgba(255, 226, 160, 0.16), rgba(255, 226, 160, 0) 70%); animation: ab-flick 4s ease-in-out infinite; }
 @keyframes ab-flick { 0%, 100% { opacity: 0.55; } 45% { opacity: 0.9; } 50% { opacity: 0.7; } 55% { opacity: 0.95; } }
@@ -151,3 +151,5 @@ body { --ab-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif; 
 @media (prefers-reduced-motion: reduce) {
   .ab-hero-spot, .ab-cue, .ab-mist, .ab-hero-enter, .ab-hero-machine-inner { animation: none; }
 }
+
+.ab-faq summary::-webkit-details-marker { display: none; }

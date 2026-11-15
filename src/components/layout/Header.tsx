@@ -13,8 +13,8 @@ export function Header() {
   const links = [
     { href: "#experience", label: t.nav.experience },
     { href: "#how", label: t.nav.how },
-    { href: "#fragrances", label: t.nav.fragrances },
     { href: "#locations", label: t.nav.venues },
+    { href: "#fragrances", label: t.nav.fragrances },
     { href: "#contact", label: t.nav.contact },
   ];
 
@@ -75,8 +75,8 @@ export function Header() {
         <div className="hidden items-center gap-4 lg:flex">
           {LangSwitch}
           <Link
-            href="#locations"
-            className="font-label inline-flex min-h-11 items-center border border-gold/60 px-5 text-[10px] uppercase tracking-[0.3em] text-ivory transition-all duration-300 hover:bg-gold hover:text-black"
+            href="#contact"
+            className="font-label inline-flex min-h-11 items-center bg-gold px-5 text-[10px] font-medium uppercase tracking-[0.3em] text-black transition-all duration-300 hover:bg-ivory"
           >
             {t.nav.find}
           </Link>
@@ -117,7 +117,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="#locations"
+              href="#contact"
               onClick={() => setOpen(false)}
               className="font-label mt-2 inline-flex w-fit border border-gold/50 px-6 py-3 text-[10px] uppercase tracking-[0.3em] text-gold"
             >

@@ -14,6 +14,7 @@ export function Contact() {
   const { t } = useLang();
   const c = t.contact;
   const [status, setStatus] = useState<Status>("idle");
+  const [interest, setInterest] = useState(0);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,10 +26,11 @@ export function Contact() {
     const email = String(data.get("email") || "");
     const venue = String(data.get("venue") || "");
     const dates = String(data.get("dates") || "");
+    const model = c.interestOpts[interest];
     const subject = `Aurabox partnership – ${venue || name}`;
 
     if (!WEB3FORMS_KEY) {
-      const body = `Name: ${name}\nEmail: ${email}\nVenue or event: ${venue}\n\nDates and crowd:\n${dates}`;
+      const body = `Name: ${name}\nEmail: ${email}\nVenue or event: ${venue}\nInterested in: ${model}\n\nDates and crowd:\n${dates}`;
       window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       return;
     }
@@ -46,6 +48,7 @@ export function Contact() {
           name,
           email,
           venue,
+          interested_in: model,
           dates,
         }),
       });
@@ -70,6 +73,7 @@ export function Contact() {
             {c.title1} <em>{c.title2}</em>
           </Reveal>
           <Reveal as="p" className="ab-lead">{c.body}</Reveal>
+          <Reveal as="p" className="ab-label ab-label--mist">{c.reply}</Reveal>
           <Reveal className="mt-2 flex gap-3">
             <a href={`mailto:${CONTACT_EMAIL}`} className="ab-icon-btn" aria-label={c.emailLabel} title={CONTACT_EMAIL}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
@@ -95,6 +99,16 @@ export function Contact() {
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-1.5">
             <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+            <fieldset className="mb-3 flex flex-col gap-3 border-0 p-0">
+              <legend className="ab-label ab-label--mist mb-3">{c.interest}</legend>
+              <div className="flex flex-wrap gap-2.5">
+                {c.interestOpts.map((opt, i) => (
+                  <button key={opt} type="button" className="ab-pill" aria-pressed={interest === i} onClick={() => setInterest(i)}>
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
             <label>
               <span className="sr-only">{c.name}</span>
               <input className="ab-field" name="name" type="text" placeholder={c.name} autoComplete="name" required />

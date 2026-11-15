@@ -20,6 +20,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (saved === "fi" || saved === "en") setLangState(saved);
+      else if (/^fi/i.test(navigator.languages?.[0] || navigator.language || "")) setLangState("fi");
     } catch {
       /* storage unavailable */
     }
