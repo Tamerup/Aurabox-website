@@ -14,7 +14,7 @@ const en = {
   hero: {
     sub: "Luxury. Exactly when it matters.",
     b2b: "Luxury fragrance for events, venues and hotels",
-    promise: "You give us the space, we take care of the rest.",
+    promise: "An experience for your guests, effortless for you.",
     cta: "Bring Aurabox to your space",
     welcome: "Welcome",
     touch: "Touch to begin",
@@ -180,7 +180,7 @@ const fi: Dictionary = {
   hero: {
     sub: "Luksusta. Juuri silloin, kun sillä on väliä.",
     b2b: "Luksustuoksut tapahtumiin, klubeille ja hotelleihin",
-    promise: "Te annatte tilan, me hoidamme loput.",
+    promise: "Elämys vieraillenne, vaivaton teille.",
     cta: "Tuo Aurabox tilaasi",
     welcome: "Tervetuloa",
     touch: "Kosketa aloittaaksesi",
