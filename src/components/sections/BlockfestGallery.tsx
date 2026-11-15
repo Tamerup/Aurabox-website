@@ -46,13 +46,15 @@ export function BlockfestGallery() {
           </Reveal>
           <Reveal className="ab-gcard">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/blockfest/fresh-up.jpg" alt="Guests gathered at the Aurabox container" />
+            <img src="/blockfest/before-show.jpg" alt="Festival guests gathered at the Aurabox container" />
             {shade}
             <div className="absolute bottom-[18px] left-[22px] font-serif text-xl italic text-ivory">{c.freshUp}</div>
           </Reveal>
           <Reveal className="ab-gcard">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/blockfest/lights.jpg" alt="Aurabox machine under the stage lights" />
+            <img src="/blockfest/lights.jpg" alt="" aria-hidden className="absolute inset-0" style={{ filter: "blur(18px) brightness(0.55)", transform: "scale(1.15)" }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/blockfest/lights.jpg" alt="Aurabox machine under the stage lights" className="relative" style={{ objectFit: "contain", objectPosition: "50% 50%" }} />
             {shade}
             <div className="absolute bottom-[18px] left-[22px] font-serif text-xl italic text-ivory">{c.lights}</div>
           </Reveal>
