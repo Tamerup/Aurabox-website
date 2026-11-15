@@ -22,7 +22,7 @@ const en = {
   },
   moments: [
     ["Before the meeting.", "Confidence on the way out, and on the way back.", "Hotel"],
-    ["Before the headliner.", "Did you know? Scent is the sense most directly linked to memory, which is why this night stays with you.", "Festival"],
+    ["Before the next festival experience.", "Did you know? Scent is the sense most directly linked to memory, which is why this night stays with you.", "Festival"],
     ["Halfway through the night.", "Fresh, confident, at your best. The night goes on.", "Venue"],
     ["The moment before the moment.", "Wherever there is something worth remembering.", "Everywhere"],
   ] as [string, string, string][],
@@ -188,7 +188,7 @@ const fi: Dictionary = {
   },
   moments: [
     ["Ennen tapaamista.", "Varmuus mukaan, kun lähdet ja kun palaat.", "Hotelli"],
-    ["Ennen pääesiintyjää.", "Tiesitkö? Tuoksu on aisteista suorimmin yhteydessä muistiin, ja siksi tämä ilta jää mieleen.", "Festivaali"],
+    ["Ennen uutta festarikokemusta.", "Tiesitkö? Tuoksu on aisteista suorimmin yhteydessä muistiin, ja siksi tämä ilta jää mieleen.", "Festivaali"],
     ["Kesken illan.", "Raikas, varma ja edustava. Ilta jatkuu.", "Klubi & baari"],
     ["Hetki ennen hetkeä.", "Kaikkialla, missä on jotain muistamisen arvoista.", "Kaikkialla"],
   ],
