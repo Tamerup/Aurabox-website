@@ -65,7 +65,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-label whitespace-nowrap text-[10px] uppercase tracking-[0.35em] text-mist transition-colors duration-300 hover:text-ivory"
+              className="font-label whitespace-nowrap text-[10px] uppercase tracking-[0.35em] text-mist transition-colors duration-300 hover:text-gold"
             >
               {link.label}
             </Link>
