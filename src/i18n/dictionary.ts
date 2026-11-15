@@ -30,8 +30,8 @@ const en = {
   how: {
     label: "How it works",
     steps: [
-      ["Choose.", "Five well-known fragrances, one for this moment."],
-      ["Tap.", "Card, phone or watch. In seconds."],
+      ["Choose.", "Six well-known fragrances, one for this moment."],
+      ["Confirm.", "Card, phone or watch. In seconds."],
       ["Feel The Luxury.", "Wrist to the nozzle, and you’re ready."],
     ] as [string, string][],
     panes: [
@@ -49,17 +49,17 @@ const en = {
       {
         label: "The range",
         title: "Designer & niche fragrances",
-        body: "From Baccarat Rouge 540 to Terre d’Hermès, rotated by season and crowd.",
+        body: "From Baccarat Rouge 540 to Terre d’Hermès. Names your guests already know.",
       },
       {
         label: "Your selection",
-        title: "Chosen for the room",
-        body: "Five fragrances in every machine, picked with you for your crowd.",
+        title: "Chosen for your crowd",
+        body: "Six fragrances in every machine, usually two for him, two for her and two unisex, picked with you from our range.",
       },
       {
-        label: "Always fresh",
-        title: "A selection that changes",
-        body: "Fragrances change with the season and the crowd, so Aurabox stays interesting.",
+        label: "Within reach",
+        title: "A touch of luxury, in the middle of life",
+        body: "Your guests enjoy a designer fragrance in the moment, without buying a whole bottle.",
       },
     ],
   },
@@ -96,7 +96,7 @@ const en = {
     title2: "your guests remember.",
     benefits: [
       ["New to Finland", "Something your guests haven’t seen anywhere else yet."],
-      ["Happier guests, added revenue", "An extra service that lifts the guest experience and, with revenue share, earns for you too."],
+      ["Happier guests, added revenue", "An extra service that lifts guest satisfaction and brings guests back and, with revenue share, earns for you too."],
       ["We take care of the rest", "Delivery, refills, service and pick-up. Nothing for you to do."],
       ["Quality guests recognise", "Genuine designer and niche fragrances, names your guests already know."],
     ] as [string, string][],
@@ -134,7 +134,7 @@ const en = {
       ["What does it cost?", "It depends on the model. As a service, you pay for the booking and sprays are free for your guests. With revenue share, guests pay per spray and you get a share. Ask us for an offer."],
       ["Who fills and services the machine?", "We do. Delivery, refills, service and pick-up are included in both models."],
       ["What do you need from us?", "Just the space. We take care of the rest."],
-      ["Can we choose the fragrances?", "Yes. Each machine holds five fragrances, chosen with you for your crowd."],
+      ["Can we choose the fragrances?", "Yes. Each machine holds six fragrances, usually two for him, two for her and two unisex, chosen with you from our range to suit your crowd."],
       ["Are the fragrances genuine?", "Yes. Original bottles from the fragrance houses, never copies."],
       ["How do guests pay?", "Contactless with card, phone or watch. With the service model, sprays are free."],
       ["For one event or longer?", "Both. Tell us your dates and we will suggest the right setup."],
@@ -196,8 +196,8 @@ const fi: Dictionary = {
   how: {
     label: "Näin se toimii",
     steps: [
-      ["Valitse.", "Viisi tunnettua tuoksua, yksi juuri tähän hetkeen."],
-      ["Napauta.", "Kortti, puhelin tai kello. Sekunneissa."],
+      ["Valitse.", "Kuusi tunnettua tuoksua, yksi juuri tähän hetkeen."],
+      ["Vahvista.", "Kortti, puhelin tai kello. Sekunneissa."],
       ["Feel The Luxury.", "Ranne suuttimen eteen, ja olet valmis."],
     ],
     panes: [
@@ -215,17 +215,17 @@ const fi: Dictionary = {
       {
         label: "Valikoima",
         title: "Design- ja niche-tuoksut",
-        body: "Baccarat Rouge 540:stä Terre d’Hermèsiin, vaihtuen sesongin ja yleisön mukaan.",
+        body: "Baccarat Rouge 540:stä Terre d’Hermèsiin. Nimiä, jotka vieraasi jo tuntevat.",
       },
       {
         label: "Teidän valikoimanne",
-        title: "Valittu tilaan sopivaksi",
-        body: "Jokaisessa koneessa viisi tuoksua, jotka valitaan yhdessä yleisönne mukaan.",
+        title: "Valittu yleisönne mukaan",
+        body: "Jokaisessa koneessa kuusi tuoksua, yleensä kaksi miehille, kaksi naisille ja kaksi unisex-tuoksua. Valitsemme ne yhdessä valikoimastamme.",
       },
       {
-        label: "Vaihtuva valikoima",
-        title: "Pysyy kiinnostavana",
-        body: "Tuoksut vaihtuvat sesongin ja yleisön mukaan, joten Aurabox pysyy kiinnostavana.",
+        label: "Ulottuvilla",
+        title: "Pala luksusta keskellä elämää",
+        body: "Vieraasi nauttivat design-tuoksusta juuri sillä hetkellä, ilman että kenenkään tarvitsee ostaa kokonaista pulloa.",
       },
     ],
   },
@@ -262,7 +262,7 @@ const fi: Dictionary = {
     title2: "jonka vieraasi muistavat.",
     benefits: [
       ["Uutta Suomessa", "Elementti, jota vieraasi eivät ole vielä nähneet muualla."],
-      ["Tyytyväisyyttä ja tuottoa", "Lisäpalvelu, joka parantaa asiakaskokemusta ja tuotonjaossa tuottaa myös teille."],
+      ["Tyytyväisyyttä ja tuottoa", "Lisäpalvelu, joka parantaa asiakastyytyväisyyttä ja sitouttaa vieraita, ja tuotonjaossa tuottaa myös teille."],
       ["Me hoidamme loput", "Toimitus, täytöt, huolto ja nouto. Teidän ei tarvitse tehdä mitään."],
       ["Laatua, jonka vieraat tunnistavat", "Aidot design- ja niche-tuoksut, joiden nimet vieraasi tuntevat jo."],
     ],
@@ -300,7 +300,7 @@ const fi: Dictionary = {
       ["Mitä yhteistyö maksaa?", "Riippuu mallista. Palveluna maksatte varauksesta, ja suihkaukset ovat vieraille ilmaisia. Tuotonjaossa vieraat maksavat suihkauksesta, ja saatte osuuden. Pyydä tarjous."],
       ["Kuka täyttää ja huoltaa koneen?", "Me. Toimitus, täytöt, huolto ja nouto sisältyvät molempiin malleihin."],
       ["Mitä tarvitsette meiltä?", "Vain tilan. Me hoidamme loput."],
-      ["Voimmeko valita tuoksut?", "Kyllä. Jokaisessa koneessa on viisi tuoksua, jotka valitaan yhdessä yleisönne mukaan."],
+      ["Voimmeko valita tuoksut?", "Kyllä. Jokaisessa koneessa on kuusi tuoksua, yleensä kaksi miehille, kaksi naisille ja kaksi unisex-tuoksua. Valitsemme ne yhdessä valikoimastamme yleisönne mukaan."],
       ["Ovatko tuoksut aitoja?", "Kyllä. Alkuperäiset pullot suoraan tuoksutaloilta, ei koskaan kopioita."],
       ["Miten vieraat maksavat?", "Lähimaksulla kortilla, puhelimella tai kellolla. Palvelumallissa suihkaukset ovat ilmaisia."],
       ["Yksittäiseen tapahtumaan vai pidemmäksi aikaa?", "Molempiin. Kerro päivät, niin ehdotamme sopivan ratkaisun."],
