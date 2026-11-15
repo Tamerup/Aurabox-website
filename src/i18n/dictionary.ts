@@ -32,7 +32,7 @@ const en = {
     steps: [
       ["Choose.", "Five well-known fragrances, one for this moment."],
       ["Tap.", "Card, phone or watch. In seconds."],
-      ["Feel it.", "Wrist to the nozzle, and you’re ready."],
+      ["Feel The Luxury.", "Wrist to the nozzle, and you’re ready."],
     ] as [string, string][],
     panes: [
       { kicker: "Step 1", title: "Choose your fragrance", sub: "" },
@@ -198,7 +198,7 @@ const fi: Dictionary = {
     steps: [
       ["Valitse.", "Viisi tunnettua tuoksua, yksi juuri tähän hetkeen."],
       ["Napauta.", "Kortti, puhelin tai kello. Sekunneissa."],
-      ["Tunne.", "Ranne suuttimen eteen, ja olet valmis."],
+      ["Feel The Luxury.", "Ranne suuttimen eteen, ja olet valmis."],
     ],
     panes: [
       { kicker: "Vaihe 1", title: "Valitse tuoksu", sub: "" },
