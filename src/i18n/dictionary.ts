@@ -22,8 +22,8 @@ const en = {
   },
   moments: [
     ["Before the meeting.", "Confidence on the way out, and on the way back.", "Hotel"],
-    ["Before the next festival experience.", "Did you know? Scent is the sense most directly linked to memory, which is why this night stays with you.", "Festival"],
-    ["Halfway through the night.", "Fresh, confident, at your best. The night goes on.", "Venue"],
+    ["Before a new experience.", "Did you know? Scent is the sense most directly linked to memory, which is why this night stays with you.", "Festival"],
+    ["Before you hit the dance floor again.", "Fresh, confident, at your best. The night goes on.", "Venue"],
     ["The moment before the moment.", "Wherever there is something worth remembering.", "Everywhere"],
   ] as [string, string, string][],
   manifesto: ["There is always", "a moment before", "the moment.", "Aurabox exists for that moment."],
@@ -188,8 +188,8 @@ const fi: Dictionary = {
   },
   moments: [
     ["Ennen tapaamista.", "Varmuus mukaan, kun lähdet ja kun palaat.", "Hotelli"],
-    ["Ennen uutta festarikokemusta.", "Tiesitkö? Tuoksu on aisteista suorimmin yhteydessä muistiin, ja siksi tämä ilta jää mieleen.", "Festivaali"],
-    ["Kesken illan.", "Raikas, varma ja edustava. Ilta jatkuu.", "Klubi & baari"],
+    ["Ennen uutta kokemusta.", "Tiesitkö? Tuoksu on aisteista suorimmin yhteydessä muistiin, ja siksi tämä ilta jää mieleen.", "Festivaali"],
+    ["Ennen kuin palaat tanssilattialle.", "Raikas, varma ja edustava. Ilta jatkuu.", "Klubi & baari"],
     ["Hetki ennen hetkeä.", "Kaikkialla, missä on jotain muistamisen arvoista.", "Kaikkialla"],
   ],
   manifesto: ["Aina on", "hetki ennen", "sitä hetkeä.", "Aurabox on olemassa sitä hetkeä varten."],
