@@ -83,15 +83,15 @@ body { --ab-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif; 
 @keyframes ab-flick { 0%, 100% { opacity: 0.55; } 45% { opacity: 0.9; } 50% { opacity: 0.7; } 55% { opacity: 0.95; } }
 .ab-hero-glow { position: absolute; left: 50%; top: 50%; width: 640px; height: 640px; margin: -320px 0 0 -320px; border-radius: 50%; }
 .ab-hero-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(20, 16, 10, 0.6)); border-top: 1px solid rgba(212, 175, 55, 0.08); }
-.ab-hero-word { position: absolute; top: 40%; font-family: var(--ab-serif); font-weight: 300; font-size: clamp(56px, 7.2vw, 104px); line-height: 1; white-space: nowrap; }
+.ab-hero-word { position: absolute; top: 33%; font-family: var(--ab-serif); font-weight: 300; font-size: clamp(56px, 7.2vw, 104px); line-height: 1; white-space: nowrap; }
 .ab-hero-word--l { right: calc(50% + min(20vw, 290px)); color: var(--color-ivory); }
 .ab-hero-word--r { left: calc(50% + min(20vw, 290px)); font-style: italic; color: var(--color-gold); }
 .ab-hero-enter { display: inline-block; animation: ab-fade 1.8s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
 @keyframes ab-fade { from { opacity: 0; } to { opacity: 1; } }
-.ab-hero-machine { position: absolute; left: 50%; top: 50%; width: min(36vw, 540px); aspect-ratio: 100 / 60; will-change: transform; }
+.ab-hero-machine { position: absolute; left: 50%; top: 42%; width: min(36vw, 540px); aspect-ratio: 100 / 60; will-change: transform; }
 .ab-hero-machine-inner { position: relative; width: 100%; height: 100%; container-type: inline-size; perspective: 2400px; animation: ab-enter 2.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
 @keyframes ab-enter { from { opacity: 0; filter: blur(14px) brightness(0.2); transform: scale(1.08); } to { opacity: 1; filter: none; transform: none; } }
-.ab-hero-foot { position: absolute; left: 0; right: 0; bottom: 28px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.ab-hero-foot { position: absolute; left: 0; right: 0; bottom: 36px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .ab-cue { width: 1px; height: 40px; background: var(--color-gold); animation: ab-cue 2.2s ease-in-out infinite; }
 @keyframes ab-cue { 0%, 100% { transform: scaleY(0.4); opacity: 0.3; transform-origin: top; } 50% { transform: scaleY(1); opacity: 1; transform-origin: top; } }
 .ab-moments { position: absolute; left: 6%; top: 50%; width: min(480px, 36%); height: 260px; margin-top: -130px; }
