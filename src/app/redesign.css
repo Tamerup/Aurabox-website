@@ -137,7 +137,7 @@ body { --ab-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif; 
 
 @media (max-width: 820px) {
   .ab-hero-word--l { right: auto; left: 0; width: 100%; text-align: center; top: 12%; }
-  .ab-hero-word--r { left: 0; width: 100%; text-align: center; top: auto; bottom: 16%; }
+  .ab-hero-word--r { left: 0; width: 100%; text-align: center; top: calc(12% + 64px); bottom: auto; }
   .ab-hero-machine { width: 84vw; }
   .ab-moments { left: 20px; right: 20px; width: auto; top: auto; bottom: 28px; margin-top: 0; height: 190px; text-align: center; }
   .ab-hero-progress { display: none; }

@@ -60,29 +60,29 @@ export function Header() {
           AURABOX
         </Link>
 
-        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-10 xl:flex" aria-label="Primary">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-label text-[10px] uppercase tracking-[0.35em] text-mist transition-colors duration-300 hover:text-ivory"
+              className="font-label whitespace-nowrap text-[10px] uppercase tracking-[0.35em] text-mist transition-colors duration-300 hover:text-ivory"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           {LangSwitch}
           <Link
             href="#contact"
-            className="font-label inline-flex min-h-11 items-center bg-gold px-5 text-[10px] font-medium uppercase tracking-[0.3em] text-black transition-all duration-300 hover:bg-ivory"
+            className="font-label inline-flex min-h-11 items-center whitespace-nowrap bg-gold px-5 text-[10px] font-medium uppercase tracking-[0.3em] text-black transition-all duration-300 hover:bg-ivory"
           >
             {t.nav.find}
           </Link>
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-3 xl:hidden">
           {LangSwitch}
           <button
             type="button"
@@ -99,7 +99,7 @@ export function Header() {
 
       <nav
         className={cn(
-          "grid overflow-hidden border-hairline bg-black transition-[grid-template-rows] duration-[400ms] ease-out lg:hidden",
+          "grid overflow-hidden border-hairline bg-black transition-[grid-template-rows] duration-[400ms] ease-out xl:hidden",
           open ? "grid-rows-[1fr] border-t" : "grid-rows-[0fr] border-t-0",
         )}
         aria-label="Mobile"
