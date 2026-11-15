@@ -75,13 +75,10 @@ const en = {
   },
   blockfest: {
     label: "Blockfest 2026 · Tampere",
-    title1: "This is how",
-    title2: "it was received.",
-    stats: [
-      ["2", "machines"],
-      ["[X]", "sprays"],
-      ["[Y]", "festival guests"],
-    ] as [string, string][],
+    title1: "The first moment.",
+    title2: "Thank you.",
+    overheard: "Overheard at Blockfest",
+    quotes: ["Could you bring this to every event?", "This is insanely good.", "This is exactly what we needed."],
     captions: {
       queue: "The queue.",
       skybox: "Skybox, Blockfest 2026.",
@@ -244,13 +241,10 @@ const fi: Dictionary = {
   },
   blockfest: {
     label: "Blockfest 2026 · Tampere",
-    title1: "Näin se",
-    title2: "otettiin vastaan.",
-    stats: [
-      ["2", "konetta"],
-      ["[X]", "suihkausta"],
-      ["[Y]", "festivaalikävijää"],
-    ],
+    title1: "Ensimmäinen hetki.",
+    title2: "Kiitos.",
+    overheard: "Kuultua Blockfestissä",
+    quotes: ["Voisitteko tuoda tän jokaiseen tapahtumaan?", "Tää on ihan sairaan hyvä.", "Tää tulee tarpeeseen."],
     captions: {
       queue: "Jono.",
       skybox: "Skybox, Blockfest 2026.",

@@ -18,14 +18,19 @@ export function BlockfestGallery() {
             {b.title1} <em>{b.title2}</em>
           </h2>
         </Reveal>
-        <Reveal className="mt-10 flex flex-wrap gap-12">
-          {b.stats.map(([n, l]) => (
-            <div key={l} className="flex flex-col gap-1.5">
-              <div className="font-serif text-[56px] font-light leading-none text-gold">{n}</div>
-              <div className="ab-label ab-label--mist">{l}</div>
-            </div>
-          ))}
-        </Reveal>
+        <div className="mt-12 flex flex-col gap-[22px]">
+          <Reveal className="ab-label ab-label--mist">{b.overheard}</Reveal>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-8">
+            {b.quotes.map((q, i) => (
+              <Reveal key={q} delay={i * 0.08} className="flex items-start gap-3.5">
+                <span aria-hidden className="font-serif text-[64px] leading-[0.8] text-gold">
+                  “
+                </span>
+                <blockquote className="m-0 font-serif text-[24px] font-light italic leading-[1.25] text-[#ececec] md:text-[26px]">{q}</blockquote>
+              </Reveal>
+            ))}
+          </div>
+        </div>
 
         <div className="ab-bento mt-14">
           <Reveal className="ab-gcard ab-bento-a">
