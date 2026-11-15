@@ -6,7 +6,6 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Genuine } from "@/components/sections/Genuine";
 import { Fragrances } from "@/components/sections/Fragrances";
 import { BlockfestGallery } from "@/components/sections/BlockfestGallery";
-import { Partners } from "@/components/sections/Partners";
 import { Venues } from "@/components/sections/Venues";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
@@ -31,7 +30,6 @@ export default function Home() {
       <main>
         <Hero />
         <BlockfestGallery />
-        <Partners />
         <HowItWorks />
         <Venues />
         <Genuine />

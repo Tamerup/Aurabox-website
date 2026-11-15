@@ -83,7 +83,7 @@ const en = {
     ] as [string, string][],
     captions: {
       queue: "The queue.",
-      skybox: "Skybox.",
+      skybox: "Skybox, Blockfest 2026.",
       lights: "Under the lights.",
       freshUp: "Fresh Up.",
       afterDark: "Fresh Up, after dark.",
@@ -251,7 +251,7 @@ const fi: Dictionary = {
     ],
     captions: {
       queue: "Jono.",
-      skybox: "Skybox.",
+      skybox: "Skybox, Blockfest 2026.",
       lights: "Valojen alla.",
       freshUp: "Fresh Up.",
       afterDark: "Fresh Up, illalla.",
