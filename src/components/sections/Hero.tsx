@@ -100,8 +100,8 @@ export function Hero() {
         </div>
 
         <div className="ab-hero-foot" style={{ opacity: 1 - h }}>
-          <p className="font-serif text-xl italic text-[#b8b8b8]">{t.hero.sub}</p>
-          <p className="max-w-[560px] px-6 text-center text-sm leading-relaxed text-mist">{t.hero.b2b}</p>
+          <p className="max-w-[720px] px-6 text-center font-serif text-[22px] font-light leading-snug text-[#ececec] md:text-[26px]">{t.hero.b2b}</p>
+          <p className="ab-label px-6 text-center" style={{ letterSpacing: "0.4em" }}>{t.hero.promise}</p>
           <a href="#contact" className="ab-btn-s mt-1" style={{ minHeight: 52, pointerEvents: h > 0.9 ? "none" : undefined }}>
             {t.hero.cta} <span className="ab-dash" aria-hidden />
           </a>
