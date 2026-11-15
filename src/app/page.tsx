@@ -30,13 +30,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <FragranceMarquee />
+        <BlockfestGallery />
+        <Partners />
         <HowItWorks />
         <Venues />
         <Genuine />
+        <FragranceMarquee />
         <Fragrances />
-        <BlockfestGallery />
-        <Partners />
         <Faq />
         <Contact />
       </main>
