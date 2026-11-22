@@ -58,6 +58,12 @@ export function Venues() {
           <Reveal as="p" className="text-center text-sm text-mist">{v.modelsBoth}</Reveal>
         </div>
 
+        <Reveal className="flex flex-col items-center gap-4 border-y border-gold/25 px-6 py-14 text-center">
+          <div className="ab-label">{v.custom.label}</div>
+          <div className="font-serif text-[34px] font-light leading-[1.1] md:text-[44px]">{v.custom.title}</div>
+          <p className="max-w-[620px] text-[17px] leading-relaxed text-[#b8b8b8]">{v.custom.body}</p>
+        </Reveal>
+
         <div className="flex flex-col items-center gap-[22px] text-center">
           <div className="flex flex-wrap justify-center gap-2.5" role="tablist" aria-label={v.label}>
             {v.tabs.map(([label], i) => (

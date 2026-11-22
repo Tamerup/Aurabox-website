@@ -116,6 +116,11 @@ const en = {
       },
     ],
     modelsBoth: "Both include delivery, refills, service and pick-up.",
+    custom: {
+      label: "Made yours",
+      title: "Your event, your machine.",
+      body: "We wrap the machine in your event or brand look and pick the fragrances for your crowd. Guests remember the moment, and your name with it.",
+    },
     body: "You give us the space. We take care of the rest: delivery, refills, service and pick-up.",
     tabs: [
       ["Hotel", "Leave an impression on arrival, and on the way out."],
@@ -135,6 +140,7 @@ const en = {
       ["Who fills and services the machine?", "We do. Delivery, refills, service and pick-up are included in both models."],
       ["What do you need from us?", "Just the space. We take care of the rest."],
       ["Can we choose the fragrances?", "Yes. Each machine holds five fragrances, usually two for her, two for him and one unisex, chosen with you from our range to suit your crowd."],
+      ["Can the machine carry our brand?", "Yes. We can wrap the machine in your event or brand look. Tell us what you have in mind when you ask for an offer."],
       ["Are the fragrances genuine?", "Yes. Original bottles from the fragrance houses, never copies."],
       ["How do guests pay?", "Contactless with card, phone or watch. With the service model, sprays are free."],
       ["For one event or longer?", "Both. Tell us your dates and we will suggest the right setup."],
@@ -282,6 +288,11 @@ const fi: Dictionary = {
       },
     ],
     modelsBoth: "Molempiin sisältyy toimitus, täytöt, huolto ja nouto.",
+    custom: {
+      label: "Räätälöity",
+      title: "Teidän näköisenne kone.",
+      body: "Teippaamme koneen tapahtumanne tai brändinne ilmeeseen ja valitsemme tuoksut yleisönne mukaan. Vieraat muistavat hetken, ja teidän nimenne sen mukana.",
+    },
     body: "Te annatte tilan, me hoidamme loput: toimituksen, täytöt, huollon ja noudon.",
     tabs: [
       ["Hotelli", "Jätä jälki heti saapuessa ja vielä lähtiessä."],
@@ -301,6 +312,7 @@ const fi: Dictionary = {
       ["Kuka täyttää ja huoltaa koneen?", "Me. Toimitus, täytöt, huolto ja nouto sisältyvät molempiin malleihin."],
       ["Mitä tarvitsette meiltä?", "Vain tilan. Me hoidamme loput."],
       ["Voimmeko valita tuoksut?", "Kyllä. Jokaisessa koneessa on viisi tuoksua, yleensä kaksi naisille, kaksi miehille ja yksi unisex. Valitsemme ne yhdessä valikoimastamme yleisönne mukaan."],
+      ["Voiko koneen brändätä tapahtumaamme?", "Kyllä. Koneen voi teipata tapahtumanne tai brändinne ilmeeseen. Kerro toiveesi tarjouspyynnössä."],
       ["Ovatko tuoksut aitoja?", "Kyllä. Alkuperäiset pullot suoraan tuoksutaloilta, ei koskaan kopioita."],
       ["Miten vieraat maksavat?", "Lähimaksulla kortilla, puhelimella tai kellolla. Palvelumallissa suihkaukset ovat ilmaisia."],
       ["Yksittäiseen tapahtumaan vai pidemmäksi aikaa?", "Molempiin. Kerro päivät, niin ehdotamme sopivan ratkaisun."],
